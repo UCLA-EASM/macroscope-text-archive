@@ -39,10 +39,10 @@ import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.model.ModelListener;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 
-import edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
-import edu.ucla.macroscope.textlibrary.model.document;
-import edu.ucla.macroscope.textlibrary.model.impl.documentImpl;
-import edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl;
+import edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
+import edu.ucla.macroscope.textlibrary.model.Document;
+import edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl;
+import edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl;
 
 import java.io.Serializable;
 
@@ -58,33 +58,33 @@ import java.util.List;
  * </p>
  *
  * @author dave
- * @see documentPersistence
- * @see documentUtil
+ * @see DocumentPersistence
+ * @see DocumentUtil
  * @generated
  */
-public class documentPersistenceImpl extends BasePersistenceImpl<document>
-	implements documentPersistence {
+public class DocumentPersistenceImpl extends BasePersistenceImpl<Document>
+	implements DocumentPersistence {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this class directly. Always use {@link documentUtil} to access the document persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this class.
+	 * Never modify or reference this class directly. Always use {@link DocumentUtil} to access the document persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this class.
 	 */
-	public static final String FINDER_CLASS_NAME_ENTITY = documentImpl.class.getName();
+	public static final String FINDER_CLASS_NAME_ENTITY = DocumentImpl.class.getName();
 	public static final String FINDER_CLASS_NAME_LIST_WITH_PAGINATION = FINDER_CLASS_NAME_ENTITY +
 		".List1";
 	public static final String FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION = FINDER_CLASS_NAME_ENTITY +
 		".List2";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0]);
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findAll", new String[0]);
-	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, Long.class,
+	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll", new String[0]);
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_GROUPID = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_GROUPID = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByGroupId",
 			new String[] {
 				Long.class.getName(),
@@ -93,13 +93,13 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				OrderByComparator.class.getName()
 			});
 	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_GROUPID =
-		new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+		new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByGroupId",
 			new String[] { Long.class.getName() },
-			documentModelImpl.GROUPID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_GROUPID = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			DocumentModelImpl.GROUPID_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_GROUPID = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByGroupId",
 			new String[] { Long.class.getName() });
 
@@ -111,7 +111,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByGroupId(long groupId) throws SystemException {
+	public List<Document> findByGroupId(long groupId) throws SystemException {
 		return findByGroupId(groupId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
@@ -119,7 +119,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns a range of all the documents where groupId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param groupId the group ID
@@ -129,7 +129,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByGroupId(long groupId, int start, int end)
+	public List<Document> findByGroupId(long groupId, int start, int end)
 		throws SystemException {
 		return findByGroupId(groupId, start, end, null);
 	}
@@ -138,7 +138,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns an ordered range of all the documents where groupId = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param groupId the group ID
@@ -149,7 +149,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByGroupId(long groupId, int start, int end,
+	public List<Document> findByGroupId(long groupId, int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -166,11 +166,11 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			finderArgs = new Object[] { groupId, start, end, orderByComparator };
 		}
 
-		List<document> list = (List<document>)FinderCacheUtil.getResult(finderPath,
+		List<Document> list = (List<Document>)FinderCacheUtil.getResult(finderPath,
 				finderArgs, this);
 
 		if ((list != null) && !list.isEmpty()) {
-			for (document document : list) {
+			for (Document document : list) {
 				if ((groupId != document.getGroupId())) {
 					list = null;
 
@@ -200,7 +200,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 			else
 			 if (pagination) {
-				query.append(documentModelImpl.ORDER_BY_JPQL);
+				query.append(DocumentModelImpl.ORDER_BY_JPQL);
 			}
 
 			String sql = query.toString();
@@ -217,15 +217,15 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				qPos.add(groupId);
 
 				if (!pagination) {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end, false);
 
 					Collections.sort(list);
 
-					list = new UnmodifiableList<document>(list);
+					list = new UnmodifiableList<Document>(list);
 				}
 				else {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end);
 				}
 
@@ -252,14 +252,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param groupId the group ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByGroupId_First(long groupId,
+	public Document findByGroupId_First(long groupId,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByGroupId_First(groupId, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByGroupId_First(groupId, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -274,7 +274,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -286,9 +286,9 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByGroupId_First(long groupId,
+	public Document fetchByGroupId_First(long groupId,
 		OrderByComparator orderByComparator) throws SystemException {
-		List<document> list = findByGroupId(groupId, 0, 1, orderByComparator);
+		List<Document> list = findByGroupId(groupId, 0, 1, orderByComparator);
 
 		if (!list.isEmpty()) {
 			return list.get(0);
@@ -303,14 +303,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param groupId the group ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByGroupId_Last(long groupId,
+	public Document findByGroupId_Last(long groupId,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByGroupId_Last(groupId, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByGroupId_Last(groupId, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -325,7 +325,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByGroupId_Last(long groupId,
+	public Document fetchByGroupId_Last(long groupId,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByGroupId(groupId);
 
@@ -345,7 +345,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			return null;
 		}
 
-		List<document> list = findByGroupId(groupId, count - 1, count,
+		List<Document> list = findByGroupId(groupId, count - 1, count,
 				orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -362,21 +362,21 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param groupId the group ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document[] findByGroupId_PrevAndNext(long documentId, long groupId,
+	public Document[] findByGroupId_PrevAndNext(long documentId, long groupId,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = findByPrimaryKey(documentId);
+		throws NoSuchDocumentException, SystemException {
+		Document document = findByPrimaryKey(documentId);
 
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			document[] array = new documentImpl[3];
+			Document[] array = new DocumentImpl[3];
 
 			array[0] = getByGroupId_PrevAndNext(session, document, groupId,
 					orderByComparator, true);
@@ -396,8 +396,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 		}
 	}
 
-	protected document getByGroupId_PrevAndNext(Session session,
-		document document, long groupId, OrderByComparator orderByComparator,
+	protected Document getByGroupId_PrevAndNext(Session session,
+		Document document, long groupId, OrderByComparator orderByComparator,
 		boolean previous) {
 		StringBundler query = null;
 
@@ -469,7 +469,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 		else {
-			query.append(documentModelImpl.ORDER_BY_JPQL);
+			query.append(DocumentModelImpl.ORDER_BY_JPQL);
 		}
 
 		String sql = query.toString();
@@ -491,7 +491,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 
-		List<document> list = q.list();
+		List<Document> list = q.list();
 
 		if (list.size() == 2) {
 			return list.get(1);
@@ -509,7 +509,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 */
 	@Override
 	public void removeByGroupId(long groupId) throws SystemException {
-		for (document document : findByGroupId(groupId, QueryUtil.ALL_POS,
+		for (Document document : findByGroupId(groupId, QueryUtil.ALL_POS,
 				QueryUtil.ALL_POS, null)) {
 			remove(document);
 		}
@@ -569,8 +569,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	}
 
 	private static final String _FINDER_COLUMN_GROUPID_GROUPID_2 = "document.groupId = ?";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_TITLE = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_TITLE = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByTitle",
 			new String[] {
 				String.class.getName(),
@@ -578,13 +578,13 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			Integer.class.getName(), Integer.class.getName(),
 				OrderByComparator.class.getName()
 			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_TITLE = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_TITLE = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByTitle",
 			new String[] { String.class.getName() },
-			documentModelImpl.TITLE_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_TITLE = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			DocumentModelImpl.TITLE_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_TITLE = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByTitle",
 			new String[] { String.class.getName() });
 
@@ -596,7 +596,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByTitle(String title) throws SystemException {
+	public List<Document> findByTitle(String title) throws SystemException {
 		return findByTitle(title, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
@@ -604,7 +604,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns a range of all the documents where title = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param title the title
@@ -614,7 +614,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByTitle(String title, int start, int end)
+	public List<Document> findByTitle(String title, int start, int end)
 		throws SystemException {
 		return findByTitle(title, start, end, null);
 	}
@@ -623,7 +623,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns an ordered range of all the documents where title = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param title the title
@@ -634,7 +634,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByTitle(String title, int start, int end,
+	public List<Document> findByTitle(String title, int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -651,11 +651,11 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			finderArgs = new Object[] { title, start, end, orderByComparator };
 		}
 
-		List<document> list = (List<document>)FinderCacheUtil.getResult(finderPath,
+		List<Document> list = (List<Document>)FinderCacheUtil.getResult(finderPath,
 				finderArgs, this);
 
 		if ((list != null) && !list.isEmpty()) {
-			for (document document : list) {
+			for (Document document : list) {
 				if (!Validator.equals(title, document.getTitle())) {
 					list = null;
 
@@ -697,7 +697,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 			else
 			 if (pagination) {
-				query.append(documentModelImpl.ORDER_BY_JPQL);
+				query.append(DocumentModelImpl.ORDER_BY_JPQL);
 			}
 
 			String sql = query.toString();
@@ -716,15 +716,15 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				}
 
 				if (!pagination) {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end, false);
 
 					Collections.sort(list);
 
-					list = new UnmodifiableList<document>(list);
+					list = new UnmodifiableList<Document>(list);
 				}
 				else {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end);
 				}
 
@@ -751,14 +751,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param title the title
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByTitle_First(String title,
+	public Document findByTitle_First(String title,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByTitle_First(title, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByTitle_First(title, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -773,7 +773,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -785,9 +785,9 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByTitle_First(String title,
+	public Document fetchByTitle_First(String title,
 		OrderByComparator orderByComparator) throws SystemException {
-		List<document> list = findByTitle(title, 0, 1, orderByComparator);
+		List<Document> list = findByTitle(title, 0, 1, orderByComparator);
 
 		if (!list.isEmpty()) {
 			return list.get(0);
@@ -802,14 +802,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param title the title
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByTitle_Last(String title,
+	public Document findByTitle_Last(String title,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByTitle_Last(title, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByTitle_Last(title, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -824,7 +824,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -836,7 +836,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByTitle_Last(String title,
+	public Document fetchByTitle_Last(String title,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByTitle(title);
 
@@ -844,7 +844,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			return null;
 		}
 
-		List<document> list = findByTitle(title, count - 1, count,
+		List<Document> list = findByTitle(title, count - 1, count,
 				orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -861,21 +861,21 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param title the title
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document[] findByTitle_PrevAndNext(long documentId, String title,
+	public Document[] findByTitle_PrevAndNext(long documentId, String title,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = findByPrimaryKey(documentId);
+		throws NoSuchDocumentException, SystemException {
+		Document document = findByPrimaryKey(documentId);
 
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			document[] array = new documentImpl[3];
+			Document[] array = new DocumentImpl[3];
 
 			array[0] = getByTitle_PrevAndNext(session, document, title,
 					orderByComparator, true);
@@ -895,8 +895,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 		}
 	}
 
-	protected document getByTitle_PrevAndNext(Session session,
-		document document, String title, OrderByComparator orderByComparator,
+	protected Document getByTitle_PrevAndNext(Session session,
+		Document document, String title, OrderByComparator orderByComparator,
 		boolean previous) {
 		StringBundler query = null;
 
@@ -980,7 +980,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 		else {
-			query.append(documentModelImpl.ORDER_BY_JPQL);
+			query.append(DocumentModelImpl.ORDER_BY_JPQL);
 		}
 
 		String sql = query.toString();
@@ -1004,7 +1004,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 
-		List<document> list = q.list();
+		List<Document> list = q.list();
 
 		if (list.size() == 2) {
 			return list.get(1);
@@ -1022,7 +1022,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 */
 	@Override
 	public void removeByTitle(String title) throws SystemException {
-		for (document document : findByTitle(title, QueryUtil.ALL_POS,
+		for (Document document : findByTitle(title, QueryUtil.ALL_POS,
 				QueryUtil.ALL_POS, null)) {
 			remove(document);
 		}
@@ -1098,8 +1098,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	private static final String _FINDER_COLUMN_TITLE_TITLE_1 = "document.title IS NULL";
 	private static final String _FINDER_COLUMN_TITLE_TITLE_2 = "document.title = ?";
 	private static final String _FINDER_COLUMN_TITLE_TITLE_3 = "(document.title IS NULL OR document.title = '')";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_AUTHOR = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_AUTHOR = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByAuthor",
 			new String[] {
 				String.class.getName(),
@@ -1108,13 +1108,13 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				OrderByComparator.class.getName()
 			});
 	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_AUTHOR =
-		new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+		new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByAuthor",
 			new String[] { String.class.getName() },
-			documentModelImpl.AUTHOR_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_AUTHOR = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			DocumentModelImpl.AUTHOR_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_AUTHOR = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByAuthor",
 			new String[] { String.class.getName() });
 
@@ -1126,7 +1126,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByAuthor(String author) throws SystemException {
+	public List<Document> findByAuthor(String author) throws SystemException {
 		return findByAuthor(author, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
@@ -1134,7 +1134,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns a range of all the documents where author = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param author the author
@@ -1144,7 +1144,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByAuthor(String author, int start, int end)
+	public List<Document> findByAuthor(String author, int start, int end)
 		throws SystemException {
 		return findByAuthor(author, start, end, null);
 	}
@@ -1153,7 +1153,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns an ordered range of all the documents where author = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param author the author
@@ -1164,7 +1164,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByAuthor(String author, int start, int end,
+	public List<Document> findByAuthor(String author, int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -1181,11 +1181,11 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			finderArgs = new Object[] { author, start, end, orderByComparator };
 		}
 
-		List<document> list = (List<document>)FinderCacheUtil.getResult(finderPath,
+		List<Document> list = (List<Document>)FinderCacheUtil.getResult(finderPath,
 				finderArgs, this);
 
 		if ((list != null) && !list.isEmpty()) {
-			for (document document : list) {
+			for (Document document : list) {
 				if (!Validator.equals(author, document.getAuthor())) {
 					list = null;
 
@@ -1227,7 +1227,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 			else
 			 if (pagination) {
-				query.append(documentModelImpl.ORDER_BY_JPQL);
+				query.append(DocumentModelImpl.ORDER_BY_JPQL);
 			}
 
 			String sql = query.toString();
@@ -1246,15 +1246,15 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				}
 
 				if (!pagination) {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end, false);
 
 					Collections.sort(list);
 
-					list = new UnmodifiableList<document>(list);
+					list = new UnmodifiableList<Document>(list);
 				}
 				else {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end);
 				}
 
@@ -1281,14 +1281,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param author the author
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByAuthor_First(String author,
+	public Document findByAuthor_First(String author,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByAuthor_First(author, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByAuthor_First(author, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -1303,7 +1303,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -1315,9 +1315,9 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByAuthor_First(String author,
+	public Document fetchByAuthor_First(String author,
 		OrderByComparator orderByComparator) throws SystemException {
-		List<document> list = findByAuthor(author, 0, 1, orderByComparator);
+		List<Document> list = findByAuthor(author, 0, 1, orderByComparator);
 
 		if (!list.isEmpty()) {
 			return list.get(0);
@@ -1332,14 +1332,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param author the author
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByAuthor_Last(String author,
+	public Document findByAuthor_Last(String author,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByAuthor_Last(author, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByAuthor_Last(author, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -1354,7 +1354,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -1366,7 +1366,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByAuthor_Last(String author,
+	public Document fetchByAuthor_Last(String author,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByAuthor(author);
 
@@ -1374,7 +1374,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			return null;
 		}
 
-		List<document> list = findByAuthor(author, count - 1, count,
+		List<Document> list = findByAuthor(author, count - 1, count,
 				orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -1391,21 +1391,21 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param author the author
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document[] findByAuthor_PrevAndNext(long documentId, String author,
+	public Document[] findByAuthor_PrevAndNext(long documentId, String author,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = findByPrimaryKey(documentId);
+		throws NoSuchDocumentException, SystemException {
+		Document document = findByPrimaryKey(documentId);
 
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			document[] array = new documentImpl[3];
+			Document[] array = new DocumentImpl[3];
 
 			array[0] = getByAuthor_PrevAndNext(session, document, author,
 					orderByComparator, true);
@@ -1425,8 +1425,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 		}
 	}
 
-	protected document getByAuthor_PrevAndNext(Session session,
-		document document, String author, OrderByComparator orderByComparator,
+	protected Document getByAuthor_PrevAndNext(Session session,
+		Document document, String author, OrderByComparator orderByComparator,
 		boolean previous) {
 		StringBundler query = null;
 
@@ -1510,7 +1510,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 		else {
-			query.append(documentModelImpl.ORDER_BY_JPQL);
+			query.append(DocumentModelImpl.ORDER_BY_JPQL);
 		}
 
 		String sql = query.toString();
@@ -1534,7 +1534,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 
-		List<document> list = q.list();
+		List<Document> list = q.list();
 
 		if (list.size() == 2) {
 			return list.get(1);
@@ -1552,7 +1552,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 */
 	@Override
 	public void removeByAuthor(String author) throws SystemException {
-		for (document document : findByAuthor(author, QueryUtil.ALL_POS,
+		for (Document document : findByAuthor(author, QueryUtil.ALL_POS,
 				QueryUtil.ALL_POS, null)) {
 			remove(document);
 		}
@@ -1629,8 +1629,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	private static final String _FINDER_COLUMN_AUTHOR_AUTHOR_2 = "document.author = ?";
 	private static final String _FINDER_COLUMN_AUTHOR_AUTHOR_3 = "(document.author IS NULL OR document.author = '')";
 	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_COLLECTION =
-		new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+		new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByCollection",
 			new String[] {
 				String.class.getName(),
@@ -1639,13 +1639,13 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				OrderByComparator.class.getName()
 			});
 	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_COLLECTION =
-		new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, documentImpl.class,
+		new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByCollection",
 			new String[] { String.class.getName() },
-			documentModelImpl.COLLECTION_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_COLLECTION = new FinderPath(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			DocumentModelImpl.COLLECTION_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_COLLECTION = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByCollection",
 			new String[] { String.class.getName() });
 
@@ -1657,7 +1657,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByCollection(String collection)
+	public List<Document> findByCollection(String collection)
 		throws SystemException {
 		return findByCollection(collection, QueryUtil.ALL_POS,
 			QueryUtil.ALL_POS, null);
@@ -1667,7 +1667,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns a range of all the documents where collection = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param collection the collection
@@ -1677,7 +1677,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByCollection(String collection, int start, int end)
+	public List<Document> findByCollection(String collection, int start, int end)
 		throws SystemException {
 		return findByCollection(collection, start, end, null);
 	}
@@ -1686,7 +1686,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns an ordered range of all the documents where collection = &#63;.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param collection the collection
@@ -1697,7 +1697,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findByCollection(String collection, int start,
+	public List<Document> findByCollection(String collection, int start,
 		int end, OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -1714,11 +1714,11 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			finderArgs = new Object[] { collection, start, end, orderByComparator };
 		}
 
-		List<document> list = (List<document>)FinderCacheUtil.getResult(finderPath,
+		List<Document> list = (List<Document>)FinderCacheUtil.getResult(finderPath,
 				finderArgs, this);
 
 		if ((list != null) && !list.isEmpty()) {
-			for (document document : list) {
+			for (Document document : list) {
 				if (!Validator.equals(collection, document.getCollection())) {
 					list = null;
 
@@ -1760,7 +1760,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 			else
 			 if (pagination) {
-				query.append(documentModelImpl.ORDER_BY_JPQL);
+				query.append(DocumentModelImpl.ORDER_BY_JPQL);
 			}
 
 			String sql = query.toString();
@@ -1779,15 +1779,15 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				}
 
 				if (!pagination) {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end, false);
 
 					Collections.sort(list);
 
-					list = new UnmodifiableList<document>(list);
+					list = new UnmodifiableList<Document>(list);
 				}
 				else {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end);
 				}
 
@@ -1814,14 +1814,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param collection the collection
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByCollection_First(String collection,
+	public Document findByCollection_First(String collection,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByCollection_First(collection,
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByCollection_First(collection,
 				orderByComparator);
 
 		if (document != null) {
@@ -1837,7 +1837,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -1849,9 +1849,9 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByCollection_First(String collection,
+	public Document fetchByCollection_First(String collection,
 		OrderByComparator orderByComparator) throws SystemException {
-		List<document> list = findByCollection(collection, 0, 1,
+		List<Document> list = findByCollection(collection, 0, 1,
 				orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -1867,14 +1867,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param collection the collection
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByCollection_Last(String collection,
+	public Document findByCollection_Last(String collection,
 		OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByCollection_Last(collection, orderByComparator);
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByCollection_Last(collection, orderByComparator);
 
 		if (document != null) {
 			return document;
@@ -1889,7 +1889,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
-		throw new NoSuchdocumentException(msg.toString());
+		throw new NoSuchDocumentException(msg.toString());
 	}
 
 	/**
@@ -1901,7 +1901,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByCollection_Last(String collection,
+	public Document fetchByCollection_Last(String collection,
 		OrderByComparator orderByComparator) throws SystemException {
 		int count = countByCollection(collection);
 
@@ -1909,7 +1909,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			return null;
 		}
 
-		List<document> list = findByCollection(collection, count - 1, count,
+		List<Document> list = findByCollection(collection, count - 1, count,
 				orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -1926,21 +1926,21 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param collection the collection
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document[] findByCollection_PrevAndNext(long documentId,
+	public Document[] findByCollection_PrevAndNext(long documentId,
 		String collection, OrderByComparator orderByComparator)
-		throws NoSuchdocumentException, SystemException {
-		document document = findByPrimaryKey(documentId);
+		throws NoSuchDocumentException, SystemException {
+		Document document = findByPrimaryKey(documentId);
 
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			document[] array = new documentImpl[3];
+			Document[] array = new DocumentImpl[3];
 
 			array[0] = getByCollection_PrevAndNext(session, document,
 					collection, orderByComparator, true);
@@ -1960,8 +1960,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 		}
 	}
 
-	protected document getByCollection_PrevAndNext(Session session,
-		document document, String collection,
+	protected Document getByCollection_PrevAndNext(Session session,
+		Document document, String collection,
 		OrderByComparator orderByComparator, boolean previous) {
 		StringBundler query = null;
 
@@ -2045,7 +2045,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 		else {
-			query.append(documentModelImpl.ORDER_BY_JPQL);
+			query.append(DocumentModelImpl.ORDER_BY_JPQL);
 		}
 
 		String sql = query.toString();
@@ -2069,7 +2069,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			}
 		}
 
-		List<document> list = q.list();
+		List<Document> list = q.list();
 
 		if (list.size() == 2) {
 			return list.get(1);
@@ -2087,7 +2087,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 */
 	@Override
 	public void removeByCollection(String collection) throws SystemException {
-		for (document document : findByCollection(collection,
+		for (Document document : findByCollection(collection,
 				QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
 			remove(document);
 		}
@@ -2163,9 +2163,632 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	private static final String _FINDER_COLUMN_COLLECTION_COLLECTION_1 = "document.collection IS NULL";
 	private static final String _FINDER_COLUMN_COLLECTION_COLLECTION_2 = "document.collection = ?";
 	private static final String _FINDER_COLUMN_COLLECTION_COLLECTION_3 = "(document.collection IS NULL OR document.collection = '')";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_AUTHORANDCOLLECTION =
+		new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION,
+			"findByAuthorAndCollection",
+			new String[] {
+				String.class.getName(), String.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_AUTHORANDCOLLECTION =
+		new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, DocumentImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"findByAuthorAndCollection",
+			new String[] { String.class.getName(), String.class.getName() },
+			DocumentModelImpl.AUTHOR_COLUMN_BITMASK |
+			DocumentModelImpl.COLLECTION_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_AUTHORANDCOLLECTION = new FinderPath(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"countByAuthorAndCollection",
+			new String[] { String.class.getName(), String.class.getName() });
 
-	public documentPersistenceImpl() {
-		setModelClass(document.class);
+	/**
+	 * Returns all the documents where author = &#63; and collection = &#63;.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @return the matching documents
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Document> findByAuthorAndCollection(String author,
+		String collection) throws SystemException {
+		return findByAuthorAndCollection(author, collection, QueryUtil.ALL_POS,
+			QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the documents where author = &#63; and collection = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @param start the lower bound of the range of documents
+	 * @param end the upper bound of the range of documents (not inclusive)
+	 * @return the range of matching documents
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Document> findByAuthorAndCollection(String author,
+		String collection, int start, int end) throws SystemException {
+		return findByAuthorAndCollection(author, collection, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the documents where author = &#63; and collection = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @param start the lower bound of the range of documents
+	 * @param end the upper bound of the range of documents (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching documents
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Document> findByAuthorAndCollection(String author,
+		String collection, int start, int end,
+		OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_AUTHORANDCOLLECTION;
+			finderArgs = new Object[] { author, collection };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_AUTHORANDCOLLECTION;
+			finderArgs = new Object[] {
+					author, collection,
+					
+					start, end, orderByComparator
+				};
+		}
+
+		List<Document> list = (List<Document>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (Document document : list) {
+				if (!Validator.equals(author, document.getAuthor()) ||
+						!Validator.equals(collection, document.getCollection())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(4 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(4);
+			}
+
+			query.append(_SQL_SELECT_DOCUMENT_WHERE);
+
+			boolean bindAuthor = false;
+
+			if (author == null) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_1);
+			}
+			else if (author.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_3);
+			}
+			else {
+				bindAuthor = true;
+
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_2);
+			}
+
+			boolean bindCollection = false;
+
+			if (collection == null) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_1);
+			}
+			else if (collection.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_3);
+			}
+			else {
+				bindCollection = true;
+
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_2);
+			}
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(DocumentModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				if (bindAuthor) {
+					qPos.add(author);
+				}
+
+				if (bindCollection) {
+					qPos.add(collection);
+				}
+
+				if (!pagination) {
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
+							start, end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<Document>(list);
+				}
+				else {
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
+							start, end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first document in the ordered set where author = &#63; and collection = &#63;.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching document
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Document findByAuthorAndCollection_First(String author,
+		String collection, OrderByComparator orderByComparator)
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByAuthorAndCollection_First(author,
+				collection, orderByComparator);
+
+		if (document != null) {
+			return document;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("author=");
+		msg.append(author);
+
+		msg.append(", collection=");
+		msg.append(collection);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchDocumentException(msg.toString());
+	}
+
+	/**
+	 * Returns the first document in the ordered set where author = &#63; and collection = &#63;.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching document, or <code>null</code> if a matching document could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Document fetchByAuthorAndCollection_First(String author,
+		String collection, OrderByComparator orderByComparator)
+		throws SystemException {
+		List<Document> list = findByAuthorAndCollection(author, collection, 0,
+				1, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last document in the ordered set where author = &#63; and collection = &#63;.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching document
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Document findByAuthorAndCollection_Last(String author,
+		String collection, OrderByComparator orderByComparator)
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByAuthorAndCollection_Last(author, collection,
+				orderByComparator);
+
+		if (document != null) {
+			return document;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("author=");
+		msg.append(author);
+
+		msg.append(", collection=");
+		msg.append(collection);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchDocumentException(msg.toString());
+	}
+
+	/**
+	 * Returns the last document in the ordered set where author = &#63; and collection = &#63;.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching document, or <code>null</code> if a matching document could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Document fetchByAuthorAndCollection_Last(String author,
+		String collection, OrderByComparator orderByComparator)
+		throws SystemException {
+		int count = countByAuthorAndCollection(author, collection);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<Document> list = findByAuthorAndCollection(author, collection,
+				count - 1, count, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the documents before and after the current document in the ordered set where author = &#63; and collection = &#63;.
+	 *
+	 * @param documentId the primary key of the current document
+	 * @param author the author
+	 * @param collection the collection
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next document
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Document[] findByAuthorAndCollection_PrevAndNext(long documentId,
+		String author, String collection, OrderByComparator orderByComparator)
+		throws NoSuchDocumentException, SystemException {
+		Document document = findByPrimaryKey(documentId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			Document[] array = new DocumentImpl[3];
+
+			array[0] = getByAuthorAndCollection_PrevAndNext(session, document,
+					author, collection, orderByComparator, true);
+
+			array[1] = document;
+
+			array[2] = getByAuthorAndCollection_PrevAndNext(session, document,
+					author, collection, orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected Document getByAuthorAndCollection_PrevAndNext(Session session,
+		Document document, String author, String collection,
+		OrderByComparator orderByComparator, boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_DOCUMENT_WHERE);
+
+		boolean bindAuthor = false;
+
+		if (author == null) {
+			query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_1);
+		}
+		else if (author.equals(StringPool.BLANK)) {
+			query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_3);
+		}
+		else {
+			bindAuthor = true;
+
+			query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_2);
+		}
+
+		boolean bindCollection = false;
+
+		if (collection == null) {
+			query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_1);
+		}
+		else if (collection.equals(StringPool.BLANK)) {
+			query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_3);
+		}
+		else {
+			bindCollection = true;
+
+			query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_2);
+		}
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(DocumentModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		if (bindAuthor) {
+			qPos.add(author);
+		}
+
+		if (bindCollection) {
+			qPos.add(collection);
+		}
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(document);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<Document> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the documents where author = &#63; and collection = &#63; from the database.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByAuthorAndCollection(String author, String collection)
+		throws SystemException {
+		for (Document document : findByAuthorAndCollection(author, collection,
+				QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
+			remove(document);
+		}
+	}
+
+	/**
+	 * Returns the number of documents where author = &#63; and collection = &#63;.
+	 *
+	 * @param author the author
+	 * @param collection the collection
+	 * @return the number of matching documents
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByAuthorAndCollection(String author, String collection)
+		throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_AUTHORANDCOLLECTION;
+
+		Object[] finderArgs = new Object[] { author, collection };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(3);
+
+			query.append(_SQL_COUNT_DOCUMENT_WHERE);
+
+			boolean bindAuthor = false;
+
+			if (author == null) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_1);
+			}
+			else if (author.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_3);
+			}
+			else {
+				bindAuthor = true;
+
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_2);
+			}
+
+			boolean bindCollection = false;
+
+			if (collection == null) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_1);
+			}
+			else if (collection.equals(StringPool.BLANK)) {
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_3);
+			}
+			else {
+				bindCollection = true;
+
+				query.append(_FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_2);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				if (bindAuthor) {
+					qPos.add(author);
+				}
+
+				if (bindCollection) {
+					qPos.add(collection);
+				}
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_1 = "document.author IS NULL AND ";
+	private static final String _FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_2 = "document.author = ? AND ";
+	private static final String _FINDER_COLUMN_AUTHORANDCOLLECTION_AUTHOR_3 = "(document.author IS NULL OR document.author = '') AND ";
+	private static final String _FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_1 = "document.collection IS NULL";
+	private static final String _FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_2 = "document.collection = ?";
+	private static final String _FINDER_COLUMN_AUTHORANDCOLLECTION_COLLECTION_3 = "(document.collection IS NULL OR document.collection = '')";
+
+	public DocumentPersistenceImpl() {
+		setModelClass(Document.class);
 	}
 
 	/**
@@ -2174,9 +2797,9 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param document the document
 	 */
 	@Override
-	public void cacheResult(document document) {
-		EntityCacheUtil.putResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentImpl.class, document.getPrimaryKey(), document);
+	public void cacheResult(Document document) {
+		EntityCacheUtil.putResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentImpl.class, document.getPrimaryKey(), document);
 
 		document.resetOriginalValues();
 	}
@@ -2187,11 +2810,11 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @param documents the documents
 	 */
 	@Override
-	public void cacheResult(List<document> documents) {
-		for (document document : documents) {
+	public void cacheResult(List<Document> documents) {
+		for (Document document : documents) {
 			if (EntityCacheUtil.getResult(
-						documentModelImpl.ENTITY_CACHE_ENABLED,
-						documentImpl.class, document.getPrimaryKey()) == null) {
+						DocumentModelImpl.ENTITY_CACHE_ENABLED,
+						DocumentImpl.class, document.getPrimaryKey()) == null) {
 				cacheResult(document);
 			}
 			else {
@@ -2210,10 +2833,10 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	@Override
 	public void clearCache() {
 		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(documentImpl.class.getName());
+			CacheRegistryUtil.clear(DocumentImpl.class.getName());
 		}
 
-		EntityCacheUtil.clearCache(documentImpl.class.getName());
+		EntityCacheUtil.clearCache(DocumentImpl.class.getName());
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
@@ -2228,22 +2851,22 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * </p>
 	 */
 	@Override
-	public void clearCache(document document) {
-		EntityCacheUtil.removeResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentImpl.class, document.getPrimaryKey());
+	public void clearCache(Document document) {
+		EntityCacheUtil.removeResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentImpl.class, document.getPrimaryKey());
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
 
 	@Override
-	public void clearCache(List<document> documents) {
+	public void clearCache(List<Document> documents) {
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 
-		for (document document : documents) {
-			EntityCacheUtil.removeResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-				documentImpl.class, document.getPrimaryKey());
+		for (Document document : documents) {
+			EntityCacheUtil.removeResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+				DocumentImpl.class, document.getPrimaryKey());
 		}
 	}
 
@@ -2254,8 +2877,8 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @return the new document
 	 */
 	@Override
-	public document create(long documentId) {
-		document document = new documentImpl();
+	public Document create(long documentId) {
+		Document document = new DocumentImpl();
 
 		document.setNew(true);
 		document.setPrimaryKey(documentId);
@@ -2268,12 +2891,12 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 *
 	 * @param documentId the primary key of the document
 	 * @return the document that was removed
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document remove(long documentId)
-		throws NoSuchdocumentException, SystemException {
+	public Document remove(long documentId)
+		throws NoSuchDocumentException, SystemException {
 		return remove((Serializable)documentId);
 	}
 
@@ -2282,18 +2905,18 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 *
 	 * @param primaryKey the primary key of the document
 	 * @return the document that was removed
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document remove(Serializable primaryKey)
-		throws NoSuchdocumentException, SystemException {
+	public Document remove(Serializable primaryKey)
+		throws NoSuchDocumentException, SystemException {
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			document document = (document)session.get(documentImpl.class,
+			Document document = (Document)session.get(DocumentImpl.class,
 					primaryKey);
 
 			if (document == null) {
@@ -2301,13 +2924,13 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 					_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
 				}
 
-				throw new NoSuchdocumentException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
+				throw new NoSuchDocumentException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
 					primaryKey);
 			}
 
 			return remove(document);
 		}
-		catch (NoSuchdocumentException nsee) {
+		catch (NoSuchDocumentException nsee) {
 			throw nsee;
 		}
 		catch (Exception e) {
@@ -2319,7 +2942,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	}
 
 	@Override
-	protected document removeImpl(document document) throws SystemException {
+	protected Document removeImpl(Document document) throws SystemException {
 		document = toUnwrappedModel(document);
 
 		Session session = null;
@@ -2328,7 +2951,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			session = openSession();
 
 			if (!session.contains(document)) {
-				document = (document)session.get(documentImpl.class,
+				document = (Document)session.get(DocumentImpl.class,
 						document.getPrimaryKeyObj());
 			}
 
@@ -2351,14 +2974,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	}
 
 	@Override
-	public document updateImpl(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public Document updateImpl(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws SystemException {
 		document = toUnwrappedModel(document);
 
 		boolean isNew = document.isNew();
 
-		documentModelImpl documentModelImpl = (documentModelImpl)document;
+		DocumentModelImpl documentModelImpl = (DocumentModelImpl)document;
 
 		Session session = null;
 
@@ -2383,7 +3006,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 
-		if (isNew || !documentModelImpl.COLUMN_BITMASK_ENABLED) {
+		if (isNew || !DocumentModelImpl.COLUMN_BITMASK_ENABLED) {
 			FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 		}
 
@@ -2457,20 +3080,43 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_COLLECTION,
 					args);
 			}
+
+			if ((documentModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_AUTHORANDCOLLECTION.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						documentModelImpl.getOriginalAuthor(),
+						documentModelImpl.getOriginalCollection()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_AUTHORANDCOLLECTION,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_AUTHORANDCOLLECTION,
+					args);
+
+				args = new Object[] {
+						documentModelImpl.getAuthor(),
+						documentModelImpl.getCollection()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_AUTHORANDCOLLECTION,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_AUTHORANDCOLLECTION,
+					args);
+			}
 		}
 
-		EntityCacheUtil.putResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-			documentImpl.class, document.getPrimaryKey(), document);
+		EntityCacheUtil.putResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+			DocumentImpl.class, document.getPrimaryKey(), document);
 
 		return document;
 	}
 
-	protected document toUnwrappedModel(document document) {
-		if (document instanceof documentImpl) {
+	protected Document toUnwrappedModel(Document document) {
+		if (document instanceof DocumentImpl) {
 			return document;
 		}
 
-		documentImpl documentImpl = new documentImpl();
+		DocumentImpl documentImpl = new DocumentImpl();
 
 		documentImpl.setNew(document.isNew());
 		documentImpl.setPrimaryKey(document.getPrimaryKey());
@@ -2495,20 +3141,20 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 *
 	 * @param primaryKey the primary key of the document
 	 * @return the document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByPrimaryKey(Serializable primaryKey)
-		throws NoSuchdocumentException, SystemException {
-		document document = fetchByPrimaryKey(primaryKey);
+	public Document findByPrimaryKey(Serializable primaryKey)
+		throws NoSuchDocumentException, SystemException {
+		Document document = fetchByPrimaryKey(primaryKey);
 
 		if (document == null) {
 			if (_log.isWarnEnabled()) {
 				_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
 			}
 
-			throw new NoSuchdocumentException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
+			throw new NoSuchDocumentException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
 				primaryKey);
 		}
 
@@ -2516,16 +3162,16 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	}
 
 	/**
-	 * Returns the document with the primary key or throws a {@link edu.ucla.macroscope.textlibrary.NoSuchdocumentException} if it could not be found.
+	 * Returns the document with the primary key or throws a {@link edu.ucla.macroscope.textlibrary.NoSuchDocumentException} if it could not be found.
 	 *
 	 * @param documentId the primary key of the document
 	 * @return the document
-	 * @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	 * @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document findByPrimaryKey(long documentId)
-		throws NoSuchdocumentException, SystemException {
+	public Document findByPrimaryKey(long documentId)
+		throws NoSuchDocumentException, SystemException {
 		return findByPrimaryKey((Serializable)documentId);
 	}
 
@@ -2537,12 +3183,12 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByPrimaryKey(Serializable primaryKey)
+	public Document fetchByPrimaryKey(Serializable primaryKey)
 		throws SystemException {
-		document document = (document)EntityCacheUtil.getResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-				documentImpl.class, primaryKey);
+		Document document = (Document)EntityCacheUtil.getResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+				DocumentImpl.class, primaryKey);
 
-		if (document == _nulldocument) {
+		if (document == _nullDocument) {
 			return null;
 		}
 
@@ -2552,19 +3198,19 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			try {
 				session = openSession();
 
-				document = (document)session.get(documentImpl.class, primaryKey);
+				document = (Document)session.get(DocumentImpl.class, primaryKey);
 
 				if (document != null) {
 					cacheResult(document);
 				}
 				else {
-					EntityCacheUtil.putResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-						documentImpl.class, primaryKey, _nulldocument);
+					EntityCacheUtil.putResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+						DocumentImpl.class, primaryKey, _nullDocument);
 				}
 			}
 			catch (Exception e) {
-				EntityCacheUtil.removeResult(documentModelImpl.ENTITY_CACHE_ENABLED,
-					documentImpl.class, primaryKey);
+				EntityCacheUtil.removeResult(DocumentModelImpl.ENTITY_CACHE_ENABLED,
+					DocumentImpl.class, primaryKey);
 
 				throw processException(e);
 			}
@@ -2584,7 +3230,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public document fetchByPrimaryKey(long documentId)
+	public Document fetchByPrimaryKey(long documentId)
 		throws SystemException {
 		return fetchByPrimaryKey((Serializable)documentId);
 	}
@@ -2596,7 +3242,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findAll() throws SystemException {
+	public List<Document> findAll() throws SystemException {
 		return findAll(QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
@@ -2604,7 +3250,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns a range of all the documents.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of documents
@@ -2613,7 +3259,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findAll(int start, int end) throws SystemException {
+	public List<Document> findAll(int start, int end) throws SystemException {
 		return findAll(start, end, null);
 	}
 
@@ -2621,7 +3267,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * Returns an ordered range of all the documents.
 	 *
 	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	 * </p>
 	 *
 	 * @param start the lower bound of the range of documents
@@ -2631,7 +3277,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public List<document> findAll(int start, int end,
+	public List<Document> findAll(int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
 		boolean pagination = true;
 		FinderPath finderPath = null;
@@ -2648,7 +3294,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 			finderArgs = new Object[] { start, end, orderByComparator };
 		}
 
-		List<document> list = (List<document>)FinderCacheUtil.getResult(finderPath,
+		List<Document> list = (List<Document>)FinderCacheUtil.getResult(finderPath,
 				finderArgs, this);
 
 		if (list == null) {
@@ -2670,7 +3316,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				sql = _SQL_SELECT_DOCUMENT;
 
 				if (pagination) {
-					sql = sql.concat(documentModelImpl.ORDER_BY_JPQL);
+					sql = sql.concat(DocumentModelImpl.ORDER_BY_JPQL);
 				}
 			}
 
@@ -2682,15 +3328,15 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 				Query q = session.createQuery(sql);
 
 				if (!pagination) {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end, false);
 
 					Collections.sort(list);
 
-					list = new UnmodifiableList<document>(list);
+					list = new UnmodifiableList<Document>(list);
 				}
 				else {
-					list = (List<document>)QueryUtil.list(q, getDialect(),
+					list = (List<Document>)QueryUtil.list(q, getDialect(),
 							start, end);
 				}
 
@@ -2718,7 +3364,7 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	 */
 	@Override
 	public void removeAll() throws SystemException {
-		for (document document : findAll()) {
+		for (Document document : findAll()) {
 			remove(document);
 		}
 	}
@@ -2767,14 +3413,14 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	public void afterPropertiesSet() {
 		String[] listenerClassNames = StringUtil.split(GetterUtil.getString(
 					com.liferay.util.service.ServiceProps.get(
-						"value.object.listener.edu.ucla.macroscope.textlibrary.model.document")));
+						"value.object.listener.edu.ucla.macroscope.textlibrary.model.Document")));
 
 		if (listenerClassNames.length > 0) {
 			try {
-				List<ModelListener<document>> listenersList = new ArrayList<ModelListener<document>>();
+				List<ModelListener<Document>> listenersList = new ArrayList<ModelListener<Document>>();
 
 				for (String listenerClassName : listenerClassNames) {
-					listenersList.add((ModelListener<document>)InstanceFactory.newInstance(
+					listenersList.add((ModelListener<Document>)InstanceFactory.newInstance(
 							getClassLoader(), listenerClassName));
 				}
 
@@ -2787,38 +3433,38 @@ public class documentPersistenceImpl extends BasePersistenceImpl<document>
 	}
 
 	public void destroy() {
-		EntityCacheUtil.removeCache(documentImpl.class.getName());
+		EntityCacheUtil.removeCache(DocumentImpl.class.getName());
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_ENTITY);
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
 
-	private static final String _SQL_SELECT_DOCUMENT = "SELECT document FROM document document";
-	private static final String _SQL_SELECT_DOCUMENT_WHERE = "SELECT document FROM document document WHERE ";
-	private static final String _SQL_COUNT_DOCUMENT = "SELECT COUNT(document) FROM document document";
-	private static final String _SQL_COUNT_DOCUMENT_WHERE = "SELECT COUNT(document) FROM document document WHERE ";
+	private static final String _SQL_SELECT_DOCUMENT = "SELECT document FROM Document document";
+	private static final String _SQL_SELECT_DOCUMENT_WHERE = "SELECT document FROM Document document WHERE ";
+	private static final String _SQL_COUNT_DOCUMENT = "SELECT COUNT(document) FROM Document document";
+	private static final String _SQL_COUNT_DOCUMENT_WHERE = "SELECT COUNT(document) FROM Document document WHERE ";
 	private static final String _ORDER_BY_ENTITY_ALIAS = "document.";
-	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No document exists with the primary key ";
-	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No document exists with the key {";
+	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Document exists with the primary key ";
+	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No Document exists with the key {";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
-	private static Log _log = LogFactoryUtil.getLog(documentPersistenceImpl.class);
-	private static document _nulldocument = new documentImpl() {
+	private static Log _log = LogFactoryUtil.getLog(DocumentPersistenceImpl.class);
+	private static Document _nullDocument = new DocumentImpl() {
 			@Override
 			public Object clone() {
 				return this;
 			}
 
 			@Override
-			public CacheModel<document> toCacheModel() {
-				return _nulldocumentCacheModel;
+			public CacheModel<Document> toCacheModel() {
+				return _nullDocumentCacheModel;
 			}
 		};
 
-	private static CacheModel<document> _nulldocumentCacheModel = new CacheModel<document>() {
+	private static CacheModel<Document> _nullDocumentCacheModel = new CacheModel<Document>() {
 			@Override
-			public document toEntityModel() {
-				return _nulldocument;
+			public Document toEntityModel() {
+				return _nullDocument;
 			}
 		};
 }

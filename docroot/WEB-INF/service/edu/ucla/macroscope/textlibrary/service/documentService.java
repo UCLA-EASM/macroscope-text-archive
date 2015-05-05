@@ -24,25 +24,25 @@ import com.liferay.portal.service.BaseService;
 import com.liferay.portal.service.InvokableService;
 
 /**
- * Provides the remote service interface for document. Methods of this
+ * Provides the remote service interface for Document. Methods of this
  * service are expected to have security checks based on the propagated JAAS
  * credentials because this service can be accessed remotely.
  *
  * @author dave
- * @see documentServiceUtil
- * @see edu.ucla.macroscope.textlibrary.service.base.documentServiceBaseImpl
- * @see edu.ucla.macroscope.textlibrary.service.impl.documentServiceImpl
+ * @see DocumentServiceUtil
+ * @see edu.ucla.macroscope.textlibrary.service.base.DocumentServiceBaseImpl
+ * @see edu.ucla.macroscope.textlibrary.service.impl.DocumentServiceImpl
  * @generated
  */
 @AccessControlled
 @JSONWebService
 @Transactional(isolation = Isolation.PORTAL, rollbackFor =  {
 	PortalException.class, SystemException.class})
-public interface documentService extends BaseService, InvokableService {
+public interface DocumentService extends BaseService, InvokableService {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link documentServiceUtil} to access the document remote service. Add custom service methods to {@link edu.ucla.macroscope.textlibrary.service.impl.documentServiceImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify or reference this interface directly. Always use {@link DocumentServiceUtil} to access the document remote service. Add custom service methods to {@link edu.ucla.macroscope.textlibrary.service.impl.DocumentServiceImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
 
 	/**

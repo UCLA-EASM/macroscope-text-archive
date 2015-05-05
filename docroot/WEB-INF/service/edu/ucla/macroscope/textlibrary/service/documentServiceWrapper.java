@@ -17,15 +17,15 @@ package edu.ucla.macroscope.textlibrary.service;
 import com.liferay.portal.service.ServiceWrapper;
 
 /**
- * Provides a wrapper for {@link documentService}.
+ * Provides a wrapper for {@link DocumentService}.
  *
  * @author dave
- * @see documentService
+ * @see DocumentService
  * @generated
  */
-public class documentServiceWrapper implements documentService,
-	ServiceWrapper<documentService> {
-	public documentServiceWrapper(documentService documentService) {
+public class DocumentServiceWrapper implements DocumentService,
+	ServiceWrapper<DocumentService> {
+	public DocumentServiceWrapper(DocumentService documentService) {
 		_documentService = documentService;
 	}
 
@@ -59,26 +59,26 @@ public class documentServiceWrapper implements documentService,
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
-	public documentService getWrappeddocumentService() {
+	public DocumentService getWrappedDocumentService() {
 		return _documentService;
 	}
 
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
 	 */
-	public void setWrappeddocumentService(documentService documentService) {
+	public void setWrappedDocumentService(DocumentService documentService) {
 		_documentService = documentService;
 	}
 
 	@Override
-	public documentService getWrappedService() {
+	public DocumentService getWrappedService() {
 		return _documentService;
 	}
 
 	@Override
-	public void setWrappedService(documentService documentService) {
+	public void setWrappedService(DocumentService documentService) {
 		_documentService = documentService;
 	}
 
-	private documentService _documentService;
+	private DocumentService _documentService;
 }

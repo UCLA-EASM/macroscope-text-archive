@@ -21,15 +21,15 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * This class is used by SOAP remote services, specifically {@link edu.ucla.macroscope.textlibrary.service.http.documentServiceSoap}.
+ * This class is used by SOAP remote services, specifically {@link edu.ucla.macroscope.textlibrary.service.http.DocumentServiceSoap}.
  *
  * @author dave
- * @see edu.ucla.macroscope.textlibrary.service.http.documentServiceSoap
+ * @see edu.ucla.macroscope.textlibrary.service.http.DocumentServiceSoap
  * @generated
  */
-public class documentSoap implements Serializable {
-	public static documentSoap toSoapModel(document model) {
-		documentSoap soapModel = new documentSoap();
+public class DocumentSoap implements Serializable {
+	public static DocumentSoap toSoapModel(Document model) {
+		DocumentSoap soapModel = new DocumentSoap();
 
 		soapModel.setDocumentId(model.getDocumentId());
 		soapModel.setGroupId(model.getGroupId());
@@ -46,8 +46,8 @@ public class documentSoap implements Serializable {
 		return soapModel;
 	}
 
-	public static documentSoap[] toSoapModels(document[] models) {
-		documentSoap[] soapModels = new documentSoap[models.length];
+	public static DocumentSoap[] toSoapModels(Document[] models) {
+		DocumentSoap[] soapModels = new DocumentSoap[models.length];
 
 		for (int i = 0; i < models.length; i++) {
 			soapModels[i] = toSoapModel(models[i]);
@@ -56,14 +56,14 @@ public class documentSoap implements Serializable {
 		return soapModels;
 	}
 
-	public static documentSoap[][] toSoapModels(document[][] models) {
-		documentSoap[][] soapModels = null;
+	public static DocumentSoap[][] toSoapModels(Document[][] models) {
+		DocumentSoap[][] soapModels = null;
 
 		if (models.length > 0) {
-			soapModels = new documentSoap[models.length][models[0].length];
+			soapModels = new DocumentSoap[models.length][models[0].length];
 		}
 		else {
-			soapModels = new documentSoap[0][0];
+			soapModels = new DocumentSoap[0][0];
 		}
 
 		for (int i = 0; i < models.length; i++) {
@@ -73,17 +73,17 @@ public class documentSoap implements Serializable {
 		return soapModels;
 	}
 
-	public static documentSoap[] toSoapModels(List<document> models) {
-		List<documentSoap> soapModels = new ArrayList<documentSoap>(models.size());
+	public static DocumentSoap[] toSoapModels(List<Document> models) {
+		List<DocumentSoap> soapModels = new ArrayList<DocumentSoap>(models.size());
 
-		for (document model : models) {
+		for (Document model : models) {
 			soapModels.add(toSoapModel(model));
 		}
 
-		return soapModels.toArray(new documentSoap[soapModels.size()]);
+		return soapModels.toArray(new DocumentSoap[soapModels.size()]);
 	}
 
-	public documentSoap() {
+	public DocumentSoap() {
 	}
 
 	public long getPrimaryKey() {

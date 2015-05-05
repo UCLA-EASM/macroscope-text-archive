@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
-import edu.ucla.macroscope.textlibrary.model.documentClp;
+import edu.ucla.macroscope.textlibrary.model.DocumentClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -102,8 +102,8 @@ public class ClpSerializer {
 
 		String oldModelClassName = oldModelClass.getName();
 
-		if (oldModelClassName.equals(documentClp.class.getName())) {
-			return translateInputdocument(oldModel);
+		if (oldModelClassName.equals(DocumentClp.class.getName())) {
+			return translateInputDocument(oldModel);
 		}
 
 		return oldModel;
@@ -121,10 +121,10 @@ public class ClpSerializer {
 		return newList;
 	}
 
-	public static Object translateInputdocument(BaseModel<?> oldModel) {
-		documentClp oldClpModel = (documentClp)oldModel;
+	public static Object translateInputDocument(BaseModel<?> oldModel) {
+		DocumentClp oldClpModel = (DocumentClp)oldModel;
 
-		BaseModel<?> newModel = oldClpModel.getdocumentRemoteModel();
+		BaseModel<?> newModel = oldClpModel.getDocumentRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -149,8 +149,8 @@ public class ClpSerializer {
 		String oldModelClassName = oldModelClass.getName();
 
 		if (oldModelClassName.equals(
-					"edu.ucla.macroscope.textlibrary.model.impl.documentImpl")) {
-			return translateOutputdocument(oldModel);
+					"edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl")) {
+			return translateOutputDocument(oldModel);
 		}
 		else if (oldModelClassName.endsWith("Clp")) {
 			try {
@@ -266,19 +266,19 @@ public class ClpSerializer {
 		}
 
 		if (className.equals(
-					"edu.ucla.macroscope.textlibrary.NoSuchdocumentException")) {
-			return new edu.ucla.macroscope.textlibrary.NoSuchdocumentException();
+					"edu.ucla.macroscope.textlibrary.NoSuchDocumentException")) {
+			return new edu.ucla.macroscope.textlibrary.NoSuchDocumentException();
 		}
 
 		return throwable;
 	}
 
-	public static Object translateOutputdocument(BaseModel<?> oldModel) {
-		documentClp newModel = new documentClp();
+	public static Object translateOutputDocument(BaseModel<?> oldModel) {
+		DocumentClp newModel = new DocumentClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
-		newModel.setdocumentRemoteModel(oldModel);
+		newModel.setDocumentRemoteModel(oldModel);
 
 		return newModel;
 	}

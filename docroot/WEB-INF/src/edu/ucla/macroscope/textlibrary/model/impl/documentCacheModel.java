@@ -18,7 +18,7 @@ import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.model.CacheModel;
 
-import edu.ucla.macroscope.textlibrary.model.document;
+import edu.ucla.macroscope.textlibrary.model.Document;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -28,13 +28,13 @@ import java.io.ObjectOutput;
 import java.util.Date;
 
 /**
- * The cache model class for representing document in entity cache.
+ * The cache model class for representing Document in entity cache.
  *
  * @author dave
- * @see document
+ * @see Document
  * @generated
  */
-public class documentCacheModel implements CacheModel<document>, Externalizable {
+public class DocumentCacheModel implements CacheModel<Document>, Externalizable {
 	@Override
 	public String toString() {
 		StringBundler sb = new StringBundler(23);
@@ -67,8 +67,8 @@ public class documentCacheModel implements CacheModel<document>, Externalizable 
 	}
 
 	@Override
-	public document toEntityModel() {
-		documentImpl documentImpl = new documentImpl();
+	public Document toEntityModel() {
+		DocumentImpl documentImpl = new DocumentImpl();
 
 		documentImpl.setDocumentId(documentId);
 		documentImpl.setGroupId(groupId);

@@ -20,8 +20,8 @@ import com.liferay.portal.service.InvokableService;
  * @author dave
  * @generated
  */
-public class documentServiceClp implements documentService {
-	public documentServiceClp(InvokableService invokableService) {
+public class DocumentServiceClp implements DocumentService {
+	public DocumentServiceClp(InvokableService invokableService) {
 		_invokableService = invokableService;
 
 		_methodName0 = "getBeanIdentifier";

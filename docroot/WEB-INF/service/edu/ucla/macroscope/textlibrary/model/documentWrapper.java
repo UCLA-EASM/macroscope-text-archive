@@ -23,26 +23,26 @@ import java.util.Map;
 
 /**
  * <p>
- * This class is a wrapper for {@link document}.
+ * This class is a wrapper for {@link Document}.
  * </p>
  *
  * @author dave
- * @see document
+ * @see Document
  * @generated
  */
-public class documentWrapper implements document, ModelWrapper<document> {
-	public documentWrapper(document document) {
+public class DocumentWrapper implements Document, ModelWrapper<Document> {
+	public DocumentWrapper(Document document) {
 		_document = document;
 	}
 
 	@Override
 	public Class<?> getModelClass() {
-		return document.class;
+		return Document.class;
 	}
 
 	@Override
 	public String getModelClassName() {
-		return document.class.getName();
+		return Document.class.getName();
 	}
 
 	@Override
@@ -455,12 +455,12 @@ public class documentWrapper implements document, ModelWrapper<document> {
 
 	@Override
 	public java.lang.Object clone() {
-		return new documentWrapper((document)_document.clone());
+		return new DocumentWrapper((Document)_document.clone());
 	}
 
 	@Override
 	public int compareTo(
-		edu.ucla.macroscope.textlibrary.model.document document) {
+		edu.ucla.macroscope.textlibrary.model.Document document) {
 		return _document.compareTo(document);
 	}
 
@@ -470,18 +470,18 @@ public class documentWrapper implements document, ModelWrapper<document> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<edu.ucla.macroscope.textlibrary.model.document> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<edu.ucla.macroscope.textlibrary.model.Document> toCacheModel() {
 		return _document.toCacheModel();
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document toEscapedModel() {
-		return new documentWrapper(_document.toEscapedModel());
+	public edu.ucla.macroscope.textlibrary.model.Document toEscapedModel() {
+		return new DocumentWrapper(_document.toEscapedModel());
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document toUnescapedModel() {
-		return new documentWrapper(_document.toUnescapedModel());
+	public edu.ucla.macroscope.textlibrary.model.Document toUnescapedModel() {
+		return new DocumentWrapper(_document.toUnescapedModel());
 	}
 
 	@Override
@@ -506,11 +506,11 @@ public class documentWrapper implements document, ModelWrapper<document> {
 			return true;
 		}
 
-		if (!(obj instanceof documentWrapper)) {
+		if (!(obj instanceof DocumentWrapper)) {
 			return false;
 		}
 
-		documentWrapper documentWrapper = (documentWrapper)obj;
+		DocumentWrapper documentWrapper = (DocumentWrapper)obj;
 
 		if (Validator.equals(_document, documentWrapper._document)) {
 			return true;
@@ -522,12 +522,12 @@ public class documentWrapper implements document, ModelWrapper<document> {
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedModel}
 	 */
-	public document getWrappeddocument() {
+	public Document getWrappedDocument() {
 		return _document;
 	}
 
 	@Override
-	public document getWrappedModel() {
+	public Document getWrappedModel() {
 		return _document;
 	}
 
@@ -536,5 +536,5 @@ public class documentWrapper implements document, ModelWrapper<document> {
 		_document.resetOriginalValues();
 	}
 
-	private document _document;
+	private Document _document;
 }

@@ -14,26 +14,26 @@
 
 package edu.ucla.macroscope.textlibrary.service.impl;
 
-import edu.ucla.macroscope.textlibrary.service.base.documentServiceBaseImpl;
+import edu.ucla.macroscope.textlibrary.service.base.DocumentServiceBaseImpl;
 
 /**
  * The implementation of the document remote service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link edu.ucla.macroscope.textlibrary.service.documentService} interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link edu.ucla.macroscope.textlibrary.service.DocumentService} interface.
  *
  * <p>
  * This is a remote service. Methods of this service are expected to have security checks based on the propagated JAAS credentials because this service can be accessed remotely.
  * </p>
  *
  * @author dave
- * @see edu.ucla.macroscope.textlibrary.service.base.documentServiceBaseImpl
- * @see edu.ucla.macroscope.textlibrary.service.documentServiceUtil
+ * @see edu.ucla.macroscope.textlibrary.service.base.DocumentServiceBaseImpl
+ * @see edu.ucla.macroscope.textlibrary.service.DocumentServiceUtil
  */
-public class documentServiceImpl extends documentServiceBaseImpl {
+public class DocumentServiceImpl extends DocumentServiceBaseImpl {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this interface directly. Always use {@link edu.ucla.macroscope.textlibrary.service.documentServiceUtil} to access the document remote service.
+	 * Never reference this interface directly. Always use {@link edu.ucla.macroscope.textlibrary.service.DocumentServiceUtil} to access the document remote service.
 	 */
 }

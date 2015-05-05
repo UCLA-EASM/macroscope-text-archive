@@ -16,7 +16,7 @@ package edu.ucla.macroscope.textlibrary.service.http;
 
 /**
  * Provides the SOAP utility for the
- * {@link edu.ucla.macroscope.textlibrary.service.documentServiceUtil} service utility. The
+ * {@link edu.ucla.macroscope.textlibrary.service.DocumentServiceUtil} service utility. The
  * static methods of this class calls the same methods of the service utility.
  * However, the signatures are different because it is difficult for SOAP to
  * support certain types.
@@ -24,10 +24,10 @@ package edu.ucla.macroscope.textlibrary.service.http;
  * <p>
  * ServiceBuilder follows certain rules in translating the methods. For example,
  * if the method in the service utility returns a {@link java.util.List}, that
- * is translated to an array of {@link edu.ucla.macroscope.textlibrary.model.documentSoap}.
+ * is translated to an array of {@link edu.ucla.macroscope.textlibrary.model.DocumentSoap}.
  * If the method in the service utility returns a
- * {@link edu.ucla.macroscope.textlibrary.model.document}, that is translated to a
- * {@link edu.ucla.macroscope.textlibrary.model.documentSoap}. Methods that SOAP cannot
+ * {@link edu.ucla.macroscope.textlibrary.model.Document}, that is translated to a
+ * {@link edu.ucla.macroscope.textlibrary.model.DocumentSoap}. Methods that SOAP cannot
  * safely wire are skipped.
  * </p>
  *
@@ -49,10 +49,10 @@ package edu.ucla.macroscope.textlibrary.service.http;
  * </p>
  *
  * @author dave
- * @see documentServiceHttp
- * @see edu.ucla.macroscope.textlibrary.model.documentSoap
- * @see edu.ucla.macroscope.textlibrary.service.documentServiceUtil
+ * @see DocumentServiceHttp
+ * @see edu.ucla.macroscope.textlibrary.model.DocumentSoap
+ * @see edu.ucla.macroscope.textlibrary.service.DocumentServiceUtil
  * @generated
  */
-public class documentServiceSoap {
+public class DocumentServiceSoap {
 }

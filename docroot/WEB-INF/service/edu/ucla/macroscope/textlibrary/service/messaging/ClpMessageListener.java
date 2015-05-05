@@ -18,8 +18,8 @@ import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
 
 import edu.ucla.macroscope.textlibrary.service.ClpSerializer;
-import edu.ucla.macroscope.textlibrary.service.documentLocalServiceUtil;
-import edu.ucla.macroscope.textlibrary.service.documentServiceUtil;
+import edu.ucla.macroscope.textlibrary.service.DocumentLocalServiceUtil;
+import edu.ucla.macroscope.textlibrary.service.DocumentServiceUtil;
 
 /**
  * @author dave
@@ -36,9 +36,9 @@ public class ClpMessageListener extends BaseMessageListener {
 
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
-			documentLocalServiceUtil.clearService();
+			DocumentLocalServiceUtil.clearService();
 
-			documentServiceUtil.clearService();
+			DocumentServiceUtil.clearService();
 		}
 	}
 }

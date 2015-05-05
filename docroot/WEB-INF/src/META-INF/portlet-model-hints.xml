@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="edu.ucla.macroscope.textlibrary.model.document">
+	<model name="edu.ucla.macroscope.textlibrary.model.Document">
 		<field name="documentId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />

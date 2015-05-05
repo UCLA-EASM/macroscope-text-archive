@@ -1,4 +1,4 @@
-create table TL_document (
+create table TL_Document (
 	documentId LONG not null primary key,
 	groupId LONG,
 	companyId LONG,

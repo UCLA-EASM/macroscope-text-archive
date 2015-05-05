@@ -14,7 +14,7 @@
 
 package edu.ucla.macroscope.textlibrary.service.base;
 
-import edu.ucla.macroscope.textlibrary.service.documentServiceUtil;
+import edu.ucla.macroscope.textlibrary.service.DocumentServiceUtil;
 
 import java.util.Arrays;
 
@@ -22,8 +22,8 @@ import java.util.Arrays;
  * @author dave
  * @generated
  */
-public class documentServiceClpInvoker {
-	public documentServiceClpInvoker() {
+public class DocumentServiceClpInvoker {
+	public DocumentServiceClpInvoker() {
 		_methodName18 = "getBeanIdentifier";
 
 		_methodParameterTypes18 = new String[] {  };
@@ -37,12 +37,12 @@ public class documentServiceClpInvoker {
 		Object[] arguments) throws Throwable {
 		if (_methodName18.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes18, parameterTypes)) {
-			return documentServiceUtil.getBeanIdentifier();
+			return DocumentServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName19.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes19, parameterTypes)) {
-			documentServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			DocumentServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}

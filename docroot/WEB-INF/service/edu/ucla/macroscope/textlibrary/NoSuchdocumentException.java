@@ -19,21 +19,21 @@ import com.liferay.portal.NoSuchModelException;
 /**
  * @author dave
  */
-public class NoSuchdocumentException extends NoSuchModelException {
+public class NoSuchDocumentException extends NoSuchModelException {
 
-	public NoSuchdocumentException() {
+	public NoSuchDocumentException() {
 		super();
 	}
 
-	public NoSuchdocumentException(String msg) {
+	public NoSuchDocumentException(String msg) {
 		super(msg);
 	}
 
-	public NoSuchdocumentException(String msg, Throwable cause) {
+	public NoSuchDocumentException(String msg, Throwable cause) {
 		super(msg, cause);
 	}
 
-	public NoSuchdocumentException(Throwable cause) {
+	public NoSuchDocumentException(Throwable cause) {
 		super(cause);
 	}
 

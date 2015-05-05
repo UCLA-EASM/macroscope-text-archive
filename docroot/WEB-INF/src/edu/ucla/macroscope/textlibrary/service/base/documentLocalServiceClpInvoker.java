@@ -14,7 +14,7 @@
 
 package edu.ucla.macroscope.textlibrary.service.base;
 
-import edu.ucla.macroscope.textlibrary.service.documentLocalServiceUtil;
+import edu.ucla.macroscope.textlibrary.service.DocumentLocalServiceUtil;
 
 import java.util.Arrays;
 
@@ -22,26 +22,26 @@ import java.util.Arrays;
  * @author dave
  * @generated
  */
-public class documentLocalServiceClpInvoker {
-	public documentLocalServiceClpInvoker() {
-		_methodName0 = "adddocument";
+public class DocumentLocalServiceClpInvoker {
+	public DocumentLocalServiceClpInvoker() {
+		_methodName0 = "addDocument";
 
 		_methodParameterTypes0 = new String[] {
-				"edu.ucla.macroscope.textlibrary.model.document"
+				"edu.ucla.macroscope.textlibrary.model.Document"
 			};
 
-		_methodName1 = "createdocument";
+		_methodName1 = "createDocument";
 
 		_methodParameterTypes1 = new String[] { "long" };
 
-		_methodName2 = "deletedocument";
+		_methodName2 = "deleteDocument";
 
 		_methodParameterTypes2 = new String[] { "long" };
 
-		_methodName3 = "deletedocument";
+		_methodName3 = "deleteDocument";
 
 		_methodParameterTypes3 = new String[] {
-				"edu.ucla.macroscope.textlibrary.model.document"
+				"edu.ucla.macroscope.textlibrary.model.Document"
 			};
 
 		_methodName4 = "dynamicQuery";
@@ -80,11 +80,11 @@ public class documentLocalServiceClpInvoker {
 				"com.liferay.portal.kernel.dao.orm.Projection"
 			};
 
-		_methodName10 = "fetchdocument";
+		_methodName10 = "fetchDocument";
 
 		_methodParameterTypes10 = new String[] { "long" };
 
-		_methodName11 = "getdocument";
+		_methodName11 = "getDocument";
 
 		_methodParameterTypes11 = new String[] { "long" };
 
@@ -92,18 +92,18 @@ public class documentLocalServiceClpInvoker {
 
 		_methodParameterTypes12 = new String[] { "java.io.Serializable" };
 
-		_methodName13 = "getdocuments";
+		_methodName13 = "getDocuments";
 
 		_methodParameterTypes13 = new String[] { "int", "int" };
 
-		_methodName14 = "getdocumentsCount";
+		_methodName14 = "getDocumentsCount";
 
 		_methodParameterTypes14 = new String[] {  };
 
-		_methodName15 = "updatedocument";
+		_methodName15 = "updateDocument";
 
 		_methodParameterTypes15 = new String[] {
-				"edu.ucla.macroscope.textlibrary.model.document"
+				"edu.ucla.macroscope.textlibrary.model.Document"
 			};
 
 		_methodName34 = "getBeanIdentifier";
@@ -113,50 +113,115 @@ public class documentLocalServiceClpInvoker {
 		_methodName35 = "setBeanIdentifier";
 
 		_methodParameterTypes35 = new String[] { "java.lang.String" };
+
+		_methodName40 = "addDocument";
+
+		_methodParameterTypes40 = new String[] {
+				"long", "long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName41 = "deleteDocument";
+
+		_methodParameterTypes41 = new String[] {
+				"edu.ucla.macroscope.textlibrary.model.Document"
+			};
+
+		_methodName42 = "deleteDocument";
+
+		_methodParameterTypes42 = new String[] { "long" };
+
+		_methodName43 = "getDocument";
+
+		_methodParameterTypes43 = new String[] { "long" };
+
+		_methodName44 = "getDocumentsByGroupId";
+
+		_methodParameterTypes44 = new String[] { "long" };
+
+		_methodName45 = "getDocumentsByGroupId";
+
+		_methodParameterTypes45 = new String[] { "long", "int", "int" };
+
+		_methodName46 = "getDocumentCountByGroupId";
+
+		_methodParameterTypes46 = new String[] { "long" };
+
+		_methodName47 = "getDocumentsByTitle";
+
+		_methodParameterTypes47 = new String[] { "java.lang.String" };
+
+		_methodName48 = "getDocumentsByTitle";
+
+		_methodParameterTypes48 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName49 = "getDocumentsByAuthor";
+
+		_methodParameterTypes49 = new String[] { "java.lang.String" };
+
+		_methodName50 = "getDocumentsByAuthor";
+
+		_methodParameterTypes50 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName51 = "getDocumentsByCollection";
+
+		_methodParameterTypes51 = new String[] { "java.lang.String" };
+
+		_methodName52 = "getDocumentsByCollection";
+
+		_methodParameterTypes52 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName53 = "updateDocument";
+
+		_methodParameterTypes53 = new String[] {
+				"long", "long", "long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
 		if (_methodName0.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes0, parameterTypes)) {
-			return documentLocalServiceUtil.adddocument((edu.ucla.macroscope.textlibrary.model.document)arguments[0]);
+			return DocumentLocalServiceUtil.addDocument((edu.ucla.macroscope.textlibrary.model.Document)arguments[0]);
 		}
 
 		if (_methodName1.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes1, parameterTypes)) {
-			return documentLocalServiceUtil.createdocument(((Long)arguments[0]).longValue());
+			return DocumentLocalServiceUtil.createDocument(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName2.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes2, parameterTypes)) {
-			return documentLocalServiceUtil.deletedocument(((Long)arguments[0]).longValue());
+			return DocumentLocalServiceUtil.deleteDocument(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName3.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes3, parameterTypes)) {
-			return documentLocalServiceUtil.deletedocument((edu.ucla.macroscope.textlibrary.model.document)arguments[0]);
+			return DocumentLocalServiceUtil.deleteDocument((edu.ucla.macroscope.textlibrary.model.Document)arguments[0]);
 		}
 
 		if (_methodName4.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes4, parameterTypes)) {
-			return documentLocalServiceUtil.dynamicQuery();
+			return DocumentLocalServiceUtil.dynamicQuery();
 		}
 
 		if (_methodName5.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes5, parameterTypes)) {
-			return documentLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
+			return DocumentLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
 		}
 
 		if (_methodName6.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes6, parameterTypes)) {
-			return documentLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return DocumentLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName7.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes7, parameterTypes)) {
-			return documentLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return DocumentLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				(com.liferay.portal.kernel.util.OrderByComparator)arguments[3]);
@@ -164,56 +229,142 @@ public class documentLocalServiceClpInvoker {
 
 		if (_methodName8.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes8, parameterTypes)) {
-			return documentLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
+			return DocumentLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
 		}
 
 		if (_methodName9.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes9, parameterTypes)) {
-			return documentLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return DocumentLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				(com.liferay.portal.kernel.dao.orm.Projection)arguments[1]);
 		}
 
 		if (_methodName10.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes10, parameterTypes)) {
-			return documentLocalServiceUtil.fetchdocument(((Long)arguments[0]).longValue());
+			return DocumentLocalServiceUtil.fetchDocument(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName11.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes11, parameterTypes)) {
-			return documentLocalServiceUtil.getdocument(((Long)arguments[0]).longValue());
+			return DocumentLocalServiceUtil.getDocument(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName12.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes12, parameterTypes)) {
-			return documentLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
+			return DocumentLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
 		}
 
 		if (_methodName13.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes13, parameterTypes)) {
-			return documentLocalServiceUtil.getdocuments(((Integer)arguments[0]).intValue(),
+			return DocumentLocalServiceUtil.getDocuments(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName14.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes14, parameterTypes)) {
-			return documentLocalServiceUtil.getdocumentsCount();
+			return DocumentLocalServiceUtil.getDocumentsCount();
 		}
 
 		if (_methodName15.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes15, parameterTypes)) {
-			return documentLocalServiceUtil.updatedocument((edu.ucla.macroscope.textlibrary.model.document)arguments[0]);
+			return DocumentLocalServiceUtil.updateDocument((edu.ucla.macroscope.textlibrary.model.Document)arguments[0]);
 		}
 
 		if (_methodName34.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
-			return documentLocalServiceUtil.getBeanIdentifier();
+			return DocumentLocalServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName35.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes35, parameterTypes)) {
-			documentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			DocumentLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
+		}
+
+		if (_methodName40.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
+			return DocumentLocalServiceUtil.addDocument(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
+				(java.lang.String)arguments[4], (java.lang.String)arguments[5]);
+		}
+
+		if (_methodName41.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
+			return DocumentLocalServiceUtil.deleteDocument((edu.ucla.macroscope.textlibrary.model.Document)arguments[0]);
+		}
+
+		if (_methodName42.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes42, parameterTypes)) {
+			return DocumentLocalServiceUtil.deleteDocument(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName43.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes43, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocument(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName44.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName45.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes45, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByGroupId(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName46.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentCountByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName47.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes47, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByTitle((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName48.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes48, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByTitle((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName49.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes49, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByAuthor((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName50.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes50, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByAuthor((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName51.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes51, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByCollection((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName52.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
+			return DocumentLocalServiceUtil.getDocumentsByCollection((java.lang.String)arguments[0],
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName53.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
+			return DocumentLocalServiceUtil.updateDocument(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Long)arguments[2]).longValue(),
+				(java.lang.String)arguments[3], (java.lang.String)arguments[4],
+				(java.lang.String)arguments[5], (java.lang.String)arguments[6],
+				(com.liferay.portal.service.ServiceContext)arguments[7]);
 		}
 
 		throw new UnsupportedOperationException();
@@ -255,4 +406,32 @@ public class documentLocalServiceClpInvoker {
 	private String[] _methodParameterTypes34;
 	private String _methodName35;
 	private String[] _methodParameterTypes35;
+	private String _methodName40;
+	private String[] _methodParameterTypes40;
+	private String _methodName41;
+	private String[] _methodParameterTypes41;
+	private String _methodName42;
+	private String[] _methodParameterTypes42;
+	private String _methodName43;
+	private String[] _methodParameterTypes43;
+	private String _methodName44;
+	private String[] _methodParameterTypes44;
+	private String _methodName45;
+	private String[] _methodParameterTypes45;
+	private String _methodName46;
+	private String[] _methodParameterTypes46;
+	private String _methodName47;
+	private String[] _methodParameterTypes47;
+	private String _methodName48;
+	private String[] _methodParameterTypes48;
+	private String _methodName49;
+	private String[] _methodParameterTypes49;
+	private String _methodName50;
+	private String[] _methodParameterTypes50;
+	private String _methodName51;
+	private String[] _methodParameterTypes51;
+	private String _methodName52;
+	private String[] _methodParameterTypes52;
+	private String _methodName53;
+	private String[] _methodParameterTypes53;
 }

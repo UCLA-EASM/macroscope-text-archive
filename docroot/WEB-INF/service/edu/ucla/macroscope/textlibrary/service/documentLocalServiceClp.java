@@ -20,28 +20,28 @@ import com.liferay.portal.service.InvokableLocalService;
  * @author dave
  * @generated
  */
-public class documentLocalServiceClp implements documentLocalService {
-	public documentLocalServiceClp(InvokableLocalService invokableLocalService) {
+public class DocumentLocalServiceClp implements DocumentLocalService {
+	public DocumentLocalServiceClp(InvokableLocalService invokableLocalService) {
 		_invokableLocalService = invokableLocalService;
 
-		_methodName0 = "adddocument";
+		_methodName0 = "addDocument";
 
 		_methodParameterTypes0 = new String[] {
-				"edu.ucla.macroscope.textlibrary.model.document"
+				"edu.ucla.macroscope.textlibrary.model.Document"
 			};
 
-		_methodName1 = "createdocument";
+		_methodName1 = "createDocument";
 
 		_methodParameterTypes1 = new String[] { "long" };
 
-		_methodName2 = "deletedocument";
+		_methodName2 = "deleteDocument";
 
 		_methodParameterTypes2 = new String[] { "long" };
 
-		_methodName3 = "deletedocument";
+		_methodName3 = "deleteDocument";
 
 		_methodParameterTypes3 = new String[] {
-				"edu.ucla.macroscope.textlibrary.model.document"
+				"edu.ucla.macroscope.textlibrary.model.Document"
 			};
 
 		_methodName4 = "dynamicQuery";
@@ -80,11 +80,11 @@ public class documentLocalServiceClp implements documentLocalService {
 				"com.liferay.portal.kernel.dao.orm.Projection"
 			};
 
-		_methodName10 = "fetchdocument";
+		_methodName10 = "fetchDocument";
 
 		_methodParameterTypes10 = new String[] { "long" };
 
-		_methodName11 = "getdocument";
+		_methodName11 = "getDocument";
 
 		_methodParameterTypes11 = new String[] { "long" };
 
@@ -92,18 +92,18 @@ public class documentLocalServiceClp implements documentLocalService {
 
 		_methodParameterTypes12 = new String[] { "java.io.Serializable" };
 
-		_methodName13 = "getdocuments";
+		_methodName13 = "getDocuments";
 
 		_methodParameterTypes13 = new String[] { "int", "int" };
 
-		_methodName14 = "getdocumentsCount";
+		_methodName14 = "getDocumentsCount";
 
 		_methodParameterTypes14 = new String[] {  };
 
-		_methodName15 = "updatedocument";
+		_methodName15 = "updateDocument";
 
 		_methodParameterTypes15 = new String[] {
-				"edu.ucla.macroscope.textlibrary.model.document"
+				"edu.ucla.macroscope.textlibrary.model.Document"
 			};
 
 		_methodName16 = "getBeanIdentifier";
@@ -113,11 +113,62 @@ public class documentLocalServiceClp implements documentLocalService {
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+
+		_methodName19 = "addDocument";
+
+		_methodParameterTypes19 = new String[] {
+				"long", "long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName20 = "getDocumentsByGroupId";
+
+		_methodParameterTypes20 = new String[] { "long" };
+
+		_methodName21 = "getDocumentsByGroupId";
+
+		_methodParameterTypes21 = new String[] { "long", "int", "int" };
+
+		_methodName22 = "getDocumentCountByGroupId";
+
+		_methodParameterTypes22 = new String[] { "long" };
+
+		_methodName23 = "getDocumentsByTitle";
+
+		_methodParameterTypes23 = new String[] { "java.lang.String" };
+
+		_methodName24 = "getDocumentsByTitle";
+
+		_methodParameterTypes24 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName25 = "getDocumentsByAuthor";
+
+		_methodParameterTypes25 = new String[] { "java.lang.String" };
+
+		_methodName26 = "getDocumentsByAuthor";
+
+		_methodParameterTypes26 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName27 = "getDocumentsByCollection";
+
+		_methodParameterTypes27 = new String[] { "java.lang.String" };
+
+		_methodName28 = "getDocumentsByCollection";
+
+		_methodParameterTypes28 = new String[] { "java.lang.String", "int", "int" };
+
+		_methodName29 = "updateDocument";
+
+		_methodParameterTypes29 = new String[] {
+				"long", "long", "long", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document adddocument(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document addDocument(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -142,11 +193,11 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document createdocument(
+	public edu.ucla.macroscope.textlibrary.model.Document createDocument(
 		long documentId) {
 		Object returnObj = null;
 
@@ -166,11 +217,11 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document deletedocument(
+	public edu.ucla.macroscope.textlibrary.model.Document deleteDocument(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
@@ -200,12 +251,12 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document deletedocument(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document deleteDocument(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -230,7 +281,7 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
@@ -431,7 +482,7 @@ public class documentLocalServiceClp implements documentLocalService {
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document fetchdocument(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchDocument(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -456,11 +507,11 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document getdocument(
+	public edu.ucla.macroscope.textlibrary.model.Document getDocument(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
@@ -490,7 +541,7 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
@@ -529,7 +580,7 @@ public class documentLocalServiceClp implements documentLocalService {
 	}
 
 	@Override
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> getdocuments(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocuments(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -554,11 +605,11 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (java.util.List<edu.ucla.macroscope.textlibrary.model.document>)ClpSerializer.translateOutput(returnObj);
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
-	public int getdocumentsCount()
+	public int getDocumentsCount()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -586,8 +637,8 @@ public class documentLocalServiceClp implements documentLocalService {
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document updatedocument(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document updateDocument(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
@@ -612,7 +663,7 @@ public class documentLocalServiceClp implements documentLocalService {
 			}
 		}
 
-		return (edu.ucla.macroscope.textlibrary.model.document)ClpSerializer.translateOutput(returnObj);
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
 	}
 
 	@Override
@@ -665,6 +716,388 @@ public class documentLocalServiceClp implements documentLocalService {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public edu.ucla.macroscope.textlibrary.model.Document addDocument(
+		long userId, long groupId, java.lang.String title,
+		java.lang.String content, java.lang.String author,
+		java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName19,
+					_methodParameterTypes19,
+					new Object[] {
+						userId,
+						
+					groupId,
+						
+					ClpSerializer.translateInput(title),
+						
+					ClpSerializer.translateInput(content),
+						
+					ClpSerializer.translateInput(author),
+						
+					ClpSerializer.translateInput(collection)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20, new Object[] { groupId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName21,
+					_methodParameterTypes21,
+					new Object[] { groupId, start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public int getDocumentCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName22,
+					_methodParameterTypes22, new Object[] { groupId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Integer)returnObj).intValue();
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByTitle(
+		java.lang.String title)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23,
+					new Object[] { ClpSerializer.translateInput(title) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByTitle(
+		java.lang.String title, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24,
+					new Object[] { ClpSerializer.translateInput(title), start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByAuthor(
+		java.lang.String author)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName25,
+					_methodParameterTypes25,
+					new Object[] { ClpSerializer.translateInput(author) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByAuthor(
+		java.lang.String author, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
+					new Object[] {
+						ClpSerializer.translateInput(author),
+						
+					start,
+						
+					end
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByCollection(
+		java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
+					new Object[] { ClpSerializer.translateInput(collection) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByCollection(
+		java.lang.String collection, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28,
+					new Object[] {
+						ClpSerializer.translateInput(collection),
+						
+					start,
+						
+					end
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<edu.ucla.macroscope.textlibrary.model.Document>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public edu.ucla.macroscope.textlibrary.model.Document updateDocument(
+		long userId, long documentId, long groupId, java.lang.String title,
+		java.lang.String content, java.lang.String author,
+		java.lang.String collection,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
+					new Object[] {
+						userId,
+						
+					documentId,
+						
+					groupId,
+						
+					ClpSerializer.translateInput(title),
+						
+					ClpSerializer.translateInput(content),
+						
+					ClpSerializer.translateInput(author),
+						
+					ClpSerializer.translateInput(collection),
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (edu.ucla.macroscope.textlibrary.model.Document)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -702,4 +1135,26 @@ public class documentLocalServiceClp implements documentLocalService {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+	private String _methodName19;
+	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
+	private String _methodName21;
+	private String[] _methodParameterTypes21;
+	private String _methodName22;
+	private String[] _methodParameterTypes22;
+	private String _methodName23;
+	private String[] _methodParameterTypes23;
+	private String _methodName24;
+	private String[] _methodParameterTypes24;
+	private String _methodName25;
+	private String[] _methodParameterTypes25;
+	private String _methodName26;
+	private String[] _methodParameterTypes26;
+	private String _methodName27;
+	private String[] _methodParameterTypes27;
+	private String _methodName28;
+	private String[] _methodParameterTypes28;
+	private String _methodName29;
+	private String[] _methodParameterTypes29;
 }

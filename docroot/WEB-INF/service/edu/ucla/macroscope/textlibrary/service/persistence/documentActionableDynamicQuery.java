@@ -17,18 +17,18 @@ package edu.ucla.macroscope.textlibrary.service.persistence;
 import com.liferay.portal.kernel.dao.orm.BaseActionableDynamicQuery;
 import com.liferay.portal.kernel.exception.SystemException;
 
-import edu.ucla.macroscope.textlibrary.model.document;
-import edu.ucla.macroscope.textlibrary.service.documentLocalServiceUtil;
+import edu.ucla.macroscope.textlibrary.model.Document;
+import edu.ucla.macroscope.textlibrary.service.DocumentLocalServiceUtil;
 
 /**
  * @author dave
  * @generated
  */
-public abstract class documentActionableDynamicQuery
+public abstract class DocumentActionableDynamicQuery
 	extends BaseActionableDynamicQuery {
-	public documentActionableDynamicQuery() throws SystemException {
-		setBaseLocalService(documentLocalServiceUtil.getService());
-		setClass(document.class);
+	public DocumentActionableDynamicQuery() throws SystemException {
+		setBaseLocalService(DocumentLocalServiceUtil.getService());
+		setClass(Document.class);
 
 		setClassLoader(edu.ucla.macroscope.textlibrary.service.ClpSerializer.class.getClassLoader());
 

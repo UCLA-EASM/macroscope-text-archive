@@ -23,7 +23,7 @@ import com.liferay.portal.model.impl.BaseModelImpl;
 import com.liferay.portal.util.PortalUtil;
 
 import edu.ucla.macroscope.textlibrary.service.ClpSerializer;
-import edu.ucla.macroscope.textlibrary.service.documentLocalServiceUtil;
+import edu.ucla.macroscope.textlibrary.service.DocumentLocalServiceUtil;
 
 import java.io.Serializable;
 
@@ -36,18 +36,18 @@ import java.util.Map;
 /**
  * @author dave
  */
-public class documentClp extends BaseModelImpl<document> implements document {
-	public documentClp() {
+public class DocumentClp extends BaseModelImpl<Document> implements Document {
+	public DocumentClp() {
 	}
 
 	@Override
 	public Class<?> getModelClass() {
-		return document.class;
+		return Document.class;
 	}
 
 	@Override
 	public String getModelClassName() {
-		return document.class.getName();
+		return Document.class.getName();
 	}
 
 	@Override
@@ -421,11 +421,11 @@ public class documentClp extends BaseModelImpl<document> implements document {
 		}
 	}
 
-	public BaseModel<?> getdocumentRemoteModel() {
+	public BaseModel<?> getDocumentRemoteModel() {
 		return _documentRemoteModel;
 	}
 
-	public void setdocumentRemoteModel(BaseModel<?> documentRemoteModel) {
+	public void setDocumentRemoteModel(BaseModel<?> documentRemoteModel) {
 		_documentRemoteModel = documentRemoteModel;
 	}
 
@@ -473,22 +473,22 @@ public class documentClp extends BaseModelImpl<document> implements document {
 	@Override
 	public void persist() throws SystemException {
 		if (this.isNew()) {
-			documentLocalServiceUtil.adddocument(this);
+			DocumentLocalServiceUtil.addDocument(this);
 		}
 		else {
-			documentLocalServiceUtil.updatedocument(this);
+			DocumentLocalServiceUtil.updateDocument(this);
 		}
 	}
 
 	@Override
-	public document toEscapedModel() {
-		return (document)ProxyUtil.newProxyInstance(document.class.getClassLoader(),
-			new Class[] { document.class }, new AutoEscapeBeanHandler(this));
+	public Document toEscapedModel() {
+		return (Document)ProxyUtil.newProxyInstance(Document.class.getClassLoader(),
+			new Class[] { Document.class }, new AutoEscapeBeanHandler(this));
 	}
 
 	@Override
 	public Object clone() {
-		documentClp clone = new documentClp();
+		DocumentClp clone = new DocumentClp();
 
 		clone.setDocumentId(getDocumentId());
 		clone.setGroupId(getGroupId());
@@ -506,7 +506,7 @@ public class documentClp extends BaseModelImpl<document> implements document {
 	}
 
 	@Override
-	public int compareTo(document document) {
+	public int compareTo(Document document) {
 		long primaryKey = document.getPrimaryKey();
 
 		if (getPrimaryKey() < primaryKey) {
@@ -526,11 +526,11 @@ public class documentClp extends BaseModelImpl<document> implements document {
 			return true;
 		}
 
-		if (!(obj instanceof documentClp)) {
+		if (!(obj instanceof DocumentClp)) {
 			return false;
 		}
 
-		documentClp document = (documentClp)obj;
+		DocumentClp document = (DocumentClp)obj;
 
 		long primaryKey = document.getPrimaryKey();
 
@@ -587,7 +587,7 @@ public class documentClp extends BaseModelImpl<document> implements document {
 		StringBundler sb = new StringBundler(37);
 
 		sb.append("<model><model-name>");
-		sb.append("edu.ucla.macroscope.textlibrary.model.document");
+		sb.append("edu.ucla.macroscope.textlibrary.model.Document");
 		sb.append("</model-name>");
 
 		sb.append(

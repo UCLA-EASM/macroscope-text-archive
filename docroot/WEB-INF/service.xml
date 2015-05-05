@@ -3,7 +3,7 @@
 <service-builder package-path="edu.ucla.macroscope.textlibrary">
 	<author>dave</author>
 	<namespace>TL</namespace>
-	<entity name="document" local-service="true">
+	<entity name="Document" local-service="true">
 
 		<!-- PK fields -->
 
@@ -34,6 +34,10 @@
             <finder-column name="author"></finder-column>
         </finder>
         <finder name="Collection" return-type="Collection">
+            <finder-column name="collection"></finder-column>
+        </finder>
+        <finder name="AuthorAndCollection" return-type="Collection">
+            <finder-column name="author"></finder-column>
             <finder-column name="collection"></finder-column>
         </finder>
 	</entity>

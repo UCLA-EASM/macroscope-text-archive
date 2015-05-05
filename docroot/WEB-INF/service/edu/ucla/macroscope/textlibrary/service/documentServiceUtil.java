@@ -19,24 +19,24 @@ import com.liferay.portal.kernel.util.ReferenceRegistry;
 import com.liferay.portal.service.InvokableService;
 
 /**
- * Provides the remote service utility for document. This utility wraps
- * {@link edu.ucla.macroscope.textlibrary.service.impl.documentServiceImpl} and is the
+ * Provides the remote service utility for Document. This utility wraps
+ * {@link edu.ucla.macroscope.textlibrary.service.impl.DocumentServiceImpl} and is the
  * primary access point for service operations in application layer code running
  * on a remote server. Methods of this service are expected to have security
  * checks based on the propagated JAAS credentials because this service can be
  * accessed remotely.
  *
  * @author dave
- * @see documentService
- * @see edu.ucla.macroscope.textlibrary.service.base.documentServiceBaseImpl
- * @see edu.ucla.macroscope.textlibrary.service.impl.documentServiceImpl
+ * @see DocumentService
+ * @see edu.ucla.macroscope.textlibrary.service.base.DocumentServiceBaseImpl
+ * @see edu.ucla.macroscope.textlibrary.service.impl.DocumentServiceImpl
  * @generated
  */
-public class documentServiceUtil {
+public class DocumentServiceUtil {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this class directly. Add custom service methods to {@link edu.ucla.macroscope.textlibrary.service.impl.documentServiceImpl} and rerun ServiceBuilder to regenerate this class.
+	 * Never modify this class directly. Add custom service methods to {@link edu.ucla.macroscope.textlibrary.service.impl.DocumentServiceImpl} and rerun ServiceBuilder to regenerate this class.
 	 */
 
 	/**
@@ -67,19 +67,19 @@ public class documentServiceUtil {
 		_service = null;
 	}
 
-	public static documentService getService() {
+	public static DocumentService getService() {
 		if (_service == null) {
 			InvokableService invokableService = (InvokableService)PortletBeanLocatorUtil.locate(ClpSerializer.getServletContextName(),
-					documentService.class.getName());
+					DocumentService.class.getName());
 
-			if (invokableService instanceof documentService) {
-				_service = (documentService)invokableService;
+			if (invokableService instanceof DocumentService) {
+				_service = (DocumentService)invokableService;
 			}
 			else {
-				_service = new documentServiceClp(invokableService);
+				_service = new DocumentServiceClp(invokableService);
 			}
 
-			ReferenceRegistry.registerReference(documentServiceUtil.class,
+			ReferenceRegistry.registerReference(DocumentServiceUtil.class,
 				"_service");
 		}
 
@@ -89,8 +89,8 @@ public class documentServiceUtil {
 	/**
 	 * @deprecated As of 6.2.0
 	 */
-	public void setService(documentService service) {
+	public void setService(DocumentService service) {
 	}
 
-	private static documentService _service;
+	private static DocumentService _service;
 }

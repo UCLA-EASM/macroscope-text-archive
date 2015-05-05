@@ -17,18 +17,18 @@ package edu.ucla.macroscope.textlibrary.model;
 import com.liferay.portal.model.PersistedModel;
 
 /**
- * The extended model interface for the document service. Represents a row in the &quot;TL_document&quot; database table, with each column mapped to a property of this class.
+ * The extended model interface for the Document service. Represents a row in the &quot;TL_Document&quot; database table, with each column mapped to a property of this class.
  *
  * @author dave
- * @see documentModel
- * @see edu.ucla.macroscope.textlibrary.model.impl.documentImpl
- * @see edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl
+ * @see DocumentModel
+ * @see edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl
+ * @see edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl
  * @generated
  */
-public interface document extends documentModel, PersistedModel {
+public interface Document extends DocumentModel, PersistedModel {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify this interface directly. Add methods to {@link edu.ucla.macroscope.textlibrary.model.impl.documentImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
+	 * Never modify this interface directly. Add methods to {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl} and rerun ServiceBuilder to automatically copy the method declarations to this interface.
 	 */
 }

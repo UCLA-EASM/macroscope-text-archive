@@ -17,16 +17,16 @@ package edu.ucla.macroscope.textlibrary.service;
 import com.liferay.portal.service.ServiceWrapper;
 
 /**
- * Provides a wrapper for {@link documentLocalService}.
+ * Provides a wrapper for {@link DocumentLocalService}.
  *
  * @author dave
- * @see documentLocalService
+ * @see DocumentLocalService
  * @generated
  */
-public class documentLocalServiceWrapper implements documentLocalService,
-	ServiceWrapper<documentLocalService> {
-	public documentLocalServiceWrapper(
-		documentLocalService documentLocalService) {
+public class DocumentLocalServiceWrapper implements DocumentLocalService,
+	ServiceWrapper<DocumentLocalService> {
+	public DocumentLocalServiceWrapper(
+		DocumentLocalService documentLocalService) {
 		_documentLocalService = documentLocalService;
 	}
 
@@ -38,10 +38,10 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document adddocument(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document addDocument(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.adddocument(document);
+		return _documentLocalService.addDocument(document);
 	}
 
 	/**
@@ -51,9 +51,9 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @return the new document
 	*/
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document createdocument(
+	public edu.ucla.macroscope.textlibrary.model.Document createDocument(
 		long documentId) {
-		return _documentLocalService.createdocument(documentId);
+		return _documentLocalService.createDocument(documentId);
 	}
 
 	/**
@@ -65,11 +65,11 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document deletedocument(
+	public edu.ucla.macroscope.textlibrary.model.Document deleteDocument(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.deletedocument(documentId);
+		return _documentLocalService.deleteDocument(documentId);
 	}
 
 	/**
@@ -80,10 +80,10 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document deletedocument(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document deleteDocument(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.deletedocument(document);
+		return _documentLocalService.deleteDocument(document);
 	}
 
 	@Override
@@ -110,7 +110,7 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* Performs a dynamic query on the database and returns a range of the matching rows.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param dynamicQuery the dynamic query
@@ -131,7 +131,7 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* Performs a dynamic query on the database and returns an ordered range of the matching rows.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param dynamicQuery the dynamic query
@@ -183,10 +183,10 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	}
 
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document fetchdocument(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchDocument(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.fetchdocument(documentId);
+		return _documentLocalService.fetchDocument(documentId);
 	}
 
 	/**
@@ -198,11 +198,11 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document getdocument(
+	public edu.ucla.macroscope.textlibrary.model.Document getDocument(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.getdocument(documentId);
+		return _documentLocalService.getDocument(documentId);
 	}
 
 	@Override
@@ -217,7 +217,7 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* Returns a range of all the documents.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param start the lower bound of the range of documents
@@ -226,10 +226,10 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> getdocuments(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocuments(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.getdocuments(start, end);
+		return _documentLocalService.getDocuments(start, end);
 	}
 
 	/**
@@ -239,9 +239,9 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public int getdocumentsCount()
+	public int getDocumentsCount()
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.getdocumentsCount();
+		return _documentLocalService.getDocumentsCount();
 	}
 
 	/**
@@ -252,10 +252,10 @@ public class documentLocalServiceWrapper implements documentLocalService,
 	* @throws SystemException if a system exception occurred
 	*/
 	@Override
-	public edu.ucla.macroscope.textlibrary.model.document updatedocument(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document updateDocument(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _documentLocalService.updatedocument(document);
+		return _documentLocalService.updateDocument(document);
 	}
 
 	/**
@@ -286,30 +286,116 @@ public class documentLocalServiceWrapper implements documentLocalService,
 			arguments);
 	}
 
+	@Override
+	public edu.ucla.macroscope.textlibrary.model.Document addDocument(
+		long userId, long groupId, java.lang.String title,
+		java.lang.String content, java.lang.String author,
+		java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.addDocument(userId, groupId, title,
+			content, author, collection);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByGroupId(groupId, start, end);
+	}
+
+	@Override
+	public int getDocumentCountByGroupId(long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentCountByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByTitle(
+		java.lang.String title)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByTitle(title);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByTitle(
+		java.lang.String title, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByTitle(title, start, end);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByAuthor(
+		java.lang.String author)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByAuthor(author);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByAuthor(
+		java.lang.String author, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByAuthor(author, start, end);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByCollection(
+		java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByCollection(collection);
+	}
+
+	@Override
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> getDocumentsByCollection(
+		java.lang.String collection, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.getDocumentsByCollection(collection,
+			start, end);
+	}
+
+	@Override
+	public edu.ucla.macroscope.textlibrary.model.Document updateDocument(
+		long userId, long documentId, long groupId, java.lang.String title,
+		java.lang.String content, java.lang.String author,
+		java.lang.String collection,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _documentLocalService.updateDocument(userId, documentId,
+			groupId, title, content, author, collection, serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
-	public documentLocalService getWrappeddocumentLocalService() {
+	public DocumentLocalService getWrappedDocumentLocalService() {
 		return _documentLocalService;
 	}
 
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
 	 */
-	public void setWrappeddocumentLocalService(
-		documentLocalService documentLocalService) {
+	public void setWrappedDocumentLocalService(
+		DocumentLocalService documentLocalService) {
 		_documentLocalService = documentLocalService;
 	}
 
 	@Override
-	public documentLocalService getWrappedService() {
+	public DocumentLocalService getWrappedService() {
 		return _documentLocalService;
 	}
 
 	@Override
-	public void setWrappedService(documentLocalService documentLocalService) {
+	public void setWrappedService(DocumentLocalService documentLocalService) {
 		_documentLocalService = documentLocalService;
 	}
 
-	private documentLocalService _documentLocalService;
+	private DocumentLocalService _documentLocalService;
 }

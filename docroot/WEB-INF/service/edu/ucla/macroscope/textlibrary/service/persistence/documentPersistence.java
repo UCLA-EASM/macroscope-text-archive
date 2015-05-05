@@ -16,7 +16,7 @@ package edu.ucla.macroscope.textlibrary.service.persistence;
 
 import com.liferay.portal.service.persistence.BasePersistence;
 
-import edu.ucla.macroscope.textlibrary.model.document;
+import edu.ucla.macroscope.textlibrary.model.Document;
 
 /**
  * The persistence interface for the document service.
@@ -26,15 +26,15 @@ import edu.ucla.macroscope.textlibrary.model.document;
  * </p>
  *
  * @author dave
- * @see documentPersistenceImpl
- * @see documentUtil
+ * @see DocumentPersistenceImpl
+ * @see DocumentUtil
  * @generated
  */
-public interface documentPersistence extends BasePersistence<document> {
+public interface DocumentPersistence extends BasePersistence<Document> {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this interface directly. Always use {@link documentUtil} to access the document persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this interface.
+	 * Never modify or reference this interface directly. Always use {@link DocumentUtil} to access the document persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this interface.
 	 */
 
 	/**
@@ -44,7 +44,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByGroupId(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByGroupId(
 		long groupId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -52,7 +52,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns a range of all the documents where groupId = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
@@ -61,7 +61,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByGroupId(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByGroupId(
 		long groupId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -69,7 +69,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns an ordered range of all the documents where groupId = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param groupId the group ID
@@ -79,7 +79,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the ordered range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByGroupId(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByGroupId(
 		long groupId, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -90,14 +90,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param groupId the group ID
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the first matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByGroupId_First(
+	public edu.ucla.macroscope.textlibrary.model.Document findByGroupId_First(
 		long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the first document in the ordered set where groupId = &#63;.
@@ -107,7 +107,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the first matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByGroupId_First(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByGroupId_First(
 		long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -118,14 +118,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param groupId the group ID
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the last matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByGroupId_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document findByGroupId_Last(
 		long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the last document in the ordered set where groupId = &#63;.
@@ -135,7 +135,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the last matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByGroupId_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByGroupId_Last(
 		long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -147,14 +147,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param groupId the group ID
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the previous, current, and next document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document[] findByGroupId_PrevAndNext(
+	public edu.ucla.macroscope.textlibrary.model.Document[] findByGroupId_PrevAndNext(
 		long documentId, long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Removes all the documents where groupId = &#63; from the database.
@@ -182,7 +182,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByTitle(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByTitle(
 		java.lang.String title)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -190,7 +190,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns a range of all the documents where title = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param title the title
@@ -199,7 +199,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByTitle(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByTitle(
 		java.lang.String title, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -207,7 +207,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns an ordered range of all the documents where title = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param title the title
@@ -217,7 +217,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the ordered range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByTitle(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByTitle(
 		java.lang.String title, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -228,14 +228,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param title the title
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the first matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByTitle_First(
+	public edu.ucla.macroscope.textlibrary.model.Document findByTitle_First(
 		java.lang.String title,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the first document in the ordered set where title = &#63;.
@@ -245,7 +245,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the first matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByTitle_First(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByTitle_First(
 		java.lang.String title,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -256,14 +256,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param title the title
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the last matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByTitle_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document findByTitle_Last(
 		java.lang.String title,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the last document in the ordered set where title = &#63;.
@@ -273,7 +273,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the last matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByTitle_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByTitle_Last(
 		java.lang.String title,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -285,14 +285,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param title the title
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the previous, current, and next document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document[] findByTitle_PrevAndNext(
+	public edu.ucla.macroscope.textlibrary.model.Document[] findByTitle_PrevAndNext(
 		long documentId, java.lang.String title,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Removes all the documents where title = &#63; from the database.
@@ -320,7 +320,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByAuthor(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByAuthor(
 		java.lang.String author)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -328,7 +328,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns a range of all the documents where author = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param author the author
@@ -337,7 +337,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByAuthor(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByAuthor(
 		java.lang.String author, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -345,7 +345,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns an ordered range of all the documents where author = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param author the author
@@ -355,7 +355,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the ordered range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByAuthor(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByAuthor(
 		java.lang.String author, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -366,14 +366,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param author the author
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the first matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByAuthor_First(
+	public edu.ucla.macroscope.textlibrary.model.Document findByAuthor_First(
 		java.lang.String author,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the first document in the ordered set where author = &#63;.
@@ -383,7 +383,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the first matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByAuthor_First(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByAuthor_First(
 		java.lang.String author,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -394,14 +394,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param author the author
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the last matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByAuthor_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document findByAuthor_Last(
 		java.lang.String author,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the last document in the ordered set where author = &#63;.
@@ -411,7 +411,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the last matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByAuthor_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByAuthor_Last(
 		java.lang.String author,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -423,14 +423,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param author the author
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the previous, current, and next document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document[] findByAuthor_PrevAndNext(
+	public edu.ucla.macroscope.textlibrary.model.Document[] findByAuthor_PrevAndNext(
 		long documentId, java.lang.String author,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Removes all the documents where author = &#63; from the database.
@@ -458,7 +458,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByCollection(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByCollection(
 		java.lang.String collection)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -466,7 +466,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns a range of all the documents where collection = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param collection the collection
@@ -475,7 +475,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByCollection(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByCollection(
 		java.lang.String collection, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -483,7 +483,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns an ordered range of all the documents where collection = &#63;.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param collection the collection
@@ -493,7 +493,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the ordered range of matching documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findByCollection(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByCollection(
 		java.lang.String collection, int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -504,14 +504,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param collection the collection
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the first matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByCollection_First(
+	public edu.ucla.macroscope.textlibrary.model.Document findByCollection_First(
 		java.lang.String collection,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the first document in the ordered set where collection = &#63;.
@@ -521,7 +521,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the first matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByCollection_First(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByCollection_First(
 		java.lang.String collection,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -532,14 +532,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param collection the collection
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the last matching document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a matching document could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByCollection_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document findByCollection_Last(
 		java.lang.String collection,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the last document in the ordered set where collection = &#63;.
@@ -549,7 +549,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the last matching document, or <code>null</code> if a matching document could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByCollection_Last(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByCollection_Last(
 		java.lang.String collection,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -561,14 +561,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param collection the collection
 	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	* @return the previous, current, and next document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document[] findByCollection_PrevAndNext(
+	public edu.ucla.macroscope.textlibrary.model.Document[] findByCollection_PrevAndNext(
 		long documentId, java.lang.String collection,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Removes all the documents where collection = &#63; from the database.
@@ -590,12 +590,163 @@ public interface documentPersistence extends BasePersistence<document> {
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Returns all the documents where author = &#63; and collection = &#63;.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @return the matching documents
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByAuthorAndCollection(
+		java.lang.String author, java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns a range of all the documents where author = &#63; and collection = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param author the author
+	* @param collection the collection
+	* @param start the lower bound of the range of documents
+	* @param end the upper bound of the range of documents (not inclusive)
+	* @return the range of matching documents
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByAuthorAndCollection(
+		java.lang.String author, java.lang.String collection, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns an ordered range of all the documents where author = &#63; and collection = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param author the author
+	* @param collection the collection
+	* @param start the lower bound of the range of documents
+	* @param end the upper bound of the range of documents (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching documents
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findByAuthorAndCollection(
+		java.lang.String author, java.lang.String collection, int start,
+		int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the first document in the ordered set where author = &#63; and collection = &#63;.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching document
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public edu.ucla.macroscope.textlibrary.model.Document findByAuthorAndCollection_First(
+		java.lang.String author, java.lang.String collection,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
+
+	/**
+	* Returns the first document in the ordered set where author = &#63; and collection = &#63;.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching document, or <code>null</code> if a matching document could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByAuthorAndCollection_First(
+		java.lang.String author, java.lang.String collection,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the last document in the ordered set where author = &#63; and collection = &#63;.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching document
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a matching document could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public edu.ucla.macroscope.textlibrary.model.Document findByAuthorAndCollection_Last(
+		java.lang.String author, java.lang.String collection,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
+
+	/**
+	* Returns the last document in the ordered set where author = &#63; and collection = &#63;.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching document, or <code>null</code> if a matching document could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByAuthorAndCollection_Last(
+		java.lang.String author, java.lang.String collection,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the documents before and after the current document in the ordered set where author = &#63; and collection = &#63;.
+	*
+	* @param documentId the primary key of the current document
+	* @param author the author
+	* @param collection the collection
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next document
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public edu.ucla.macroscope.textlibrary.model.Document[] findByAuthorAndCollection_PrevAndNext(
+		long documentId, java.lang.String author, java.lang.String collection,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
+
+	/**
+	* Removes all the documents where author = &#63; and collection = &#63; from the database.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @throws SystemException if a system exception occurred
+	*/
+	public void removeByAuthorAndCollection(java.lang.String author,
+		java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Returns the number of documents where author = &#63; and collection = &#63;.
+	*
+	* @param author the author
+	* @param collection the collection
+	* @return the number of matching documents
+	* @throws SystemException if a system exception occurred
+	*/
+	public int countByAuthorAndCollection(java.lang.String author,
+		java.lang.String collection)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* Caches the document in the entity cache if it is enabled.
 	*
 	* @param document the document
 	*/
 	public void cacheResult(
-		edu.ucla.macroscope.textlibrary.model.document document);
+		edu.ucla.macroscope.textlibrary.model.Document document);
 
 	/**
 	* Caches the documents in the entity cache if it is enabled.
@@ -603,7 +754,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param documents the documents
 	*/
 	public void cacheResult(
-		java.util.List<edu.ucla.macroscope.textlibrary.model.document> documents);
+		java.util.List<edu.ucla.macroscope.textlibrary.model.Document> documents);
 
 	/**
 	* Creates a new document with the primary key. Does not add the document to the database.
@@ -611,7 +762,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @param documentId the primary key for the new document
 	* @return the new document
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document create(
+	public edu.ucla.macroscope.textlibrary.model.Document create(
 		long documentId);
 
 	/**
@@ -619,30 +770,30 @@ public interface documentPersistence extends BasePersistence<document> {
 	*
 	* @param documentId the primary key of the document
 	* @return the document that was removed
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document remove(
+	public edu.ucla.macroscope.textlibrary.model.Document remove(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
-	public edu.ucla.macroscope.textlibrary.model.document updateImpl(
-		edu.ucla.macroscope.textlibrary.model.document document)
+	public edu.ucla.macroscope.textlibrary.model.Document updateImpl(
+		edu.ucla.macroscope.textlibrary.model.Document document)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
-	* Returns the document with the primary key or throws a {@link edu.ucla.macroscope.textlibrary.NoSuchdocumentException} if it could not be found.
+	* Returns the document with the primary key or throws a {@link edu.ucla.macroscope.textlibrary.NoSuchDocumentException} if it could not be found.
 	*
 	* @param documentId the primary key of the document
 	* @return the document
-	* @throws edu.ucla.macroscope.textlibrary.NoSuchdocumentException if a document with the primary key could not be found
+	* @throws edu.ucla.macroscope.textlibrary.NoSuchDocumentException if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document findByPrimaryKey(
+	public edu.ucla.macroscope.textlibrary.model.Document findByPrimaryKey(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.SystemException,
-			edu.ucla.macroscope.textlibrary.NoSuchdocumentException;
+			edu.ucla.macroscope.textlibrary.NoSuchDocumentException;
 
 	/**
 	* Returns the document with the primary key or returns <code>null</code> if it could not be found.
@@ -651,7 +802,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the document, or <code>null</code> if a document with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public edu.ucla.macroscope.textlibrary.model.document fetchByPrimaryKey(
+	public edu.ucla.macroscope.textlibrary.model.Document fetchByPrimaryKey(
 		long documentId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -661,14 +812,14 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findAll()
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findAll()
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
 	* Returns a range of all the documents.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param start the lower bound of the range of documents
@@ -676,7 +827,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the range of documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findAll(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findAll(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
@@ -684,7 +835,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* Returns an ordered range of all the documents.
 	*
 	* <p>
-	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.documentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
 	* </p>
 	*
 	* @param start the lower bound of the range of documents
@@ -693,7 +844,7 @@ public interface documentPersistence extends BasePersistence<document> {
 	* @return the ordered range of documents
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<edu.ucla.macroscope.textlibrary.model.document> findAll(
+	public java.util.List<edu.ucla.macroscope.textlibrary.model.Document> findAll(
 		int start, int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException;
