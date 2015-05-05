@@ -1,1 +1,3 @@
 *.swp
+docroot/WEB-INF/classes/
+/docroot/WEB-INF/src/service.properties
