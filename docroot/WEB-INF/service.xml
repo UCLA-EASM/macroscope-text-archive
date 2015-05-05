@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
-<service-builder package-path="com.liferay.sample">
+<service-builder package-path="edu.ucla.macroscope.textlibrary">
 	<author>dave</author>
-	<namespace>SAMPLE</namespace>
+	<namespace>TL</namespace>
+	<entity name="document" local-service="true">
 
-	
+		<!-- PK fields -->
+
+		<column name="documentId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="content" type="String"></column>
+        <column name="title" type="String"></column>
+        <column name="author" type="String"></column>
+        <column name="collection" type="String"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Title" return-type="Collection">
+            <finder-column name="title"></finder-column>
+        </finder>
+        <finder name="Author" return-type="Collection">
+            <finder-column name="author"></finder-column>
+        </finder>
+        <finder name="Collection" return-type="Collection">
+            <finder-column name="collection"></finder-column>
+        </finder>
+	</entity>
+
+
 </service-builder>
