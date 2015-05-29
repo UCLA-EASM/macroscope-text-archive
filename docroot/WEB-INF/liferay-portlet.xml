@@ -8,7 +8,16 @@
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
+			/js/angular.min.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
 			/js/main.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/test.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/angular-file-upload.min.js
 		</footer-portlet-javascript>
 		<css-class-wrapper>text-archive-portlet</css-class-wrapper>
 	</portlet>

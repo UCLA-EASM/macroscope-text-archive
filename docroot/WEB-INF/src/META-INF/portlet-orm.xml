@@ -7,7 +7,7 @@
 			<access>PROPERTY</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<mapped-superclass class="edu.ucla.macroscope.textlibrary.model.impl.DocumentModelImpl">
+	<mapped-superclass class="edu.ucla.macroscope.textlibrary.model.impl.MacroscopeDocumentModelImpl">
 		<attributes>
 			<id name="documentId" />
 			<basic name="groupId" />
@@ -30,8 +30,8 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<entity class="edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl" name="Document">
-		<table name="TL_Document" />
+	<entity class="edu.ucla.macroscope.textlibrary.model.impl.MacroscopeDocumentImpl" name="MacroscopeDocument">
+		<table name="TL_MacroscopeDocument" />
 		<attributes />
 	</entity>
 </entity-mappings>

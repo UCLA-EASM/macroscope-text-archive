@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<bean id="edu.ucla.macroscope.textlibrary.service.DocumentLocalService" class="edu.ucla.macroscope.textlibrary.service.impl.DocumentLocalServiceImpl" />
-	<bean id="edu.ucla.macroscope.textlibrary.service.DocumentService" class="edu.ucla.macroscope.textlibrary.service.impl.DocumentServiceImpl" />
-	<bean id="edu.ucla.macroscope.textlibrary.service.persistence.DocumentPersistence" class="edu.ucla.macroscope.textlibrary.service.persistence.DocumentPersistenceImpl" parent="basePersistence" />
+	<bean id="edu.ucla.macroscope.textlibrary.service.MacroscopeDocumentLocalService" class="edu.ucla.macroscope.textlibrary.service.impl.MacroscopeDocumentLocalServiceImpl" />
+	<bean id="edu.ucla.macroscope.textlibrary.service.MacroscopeDocumentService" class="edu.ucla.macroscope.textlibrary.service.impl.MacroscopeDocumentServiceImpl" />
+	<bean id="edu.ucla.macroscope.textlibrary.service.persistence.MacroscopeDocumentPersistence" class="edu.ucla.macroscope.textlibrary.service.persistence.MacroscopeDocumentPersistenceImpl" parent="basePersistence" />
 </beans>

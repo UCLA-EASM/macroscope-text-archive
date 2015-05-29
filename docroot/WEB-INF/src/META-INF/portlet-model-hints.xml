@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="edu.ucla.macroscope.textlibrary.model.Document">
+	<model name="edu.ucla.macroscope.textlibrary.model.MacroscopeDocument">
 		<field name="documentId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
@@ -9,7 +9,7 @@
 		<field name="userName" type="String" />
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
-		<field name="content" type="String" />
+		<field name="content" type="Blob" />
 		<field name="title" type="String" />
 		<field name="author" type="String" />
 		<field name="collection" type="String" />

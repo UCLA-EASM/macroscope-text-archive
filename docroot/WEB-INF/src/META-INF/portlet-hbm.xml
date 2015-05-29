@@ -2,8 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
-	<import class="edu.ucla.macroscope.textlibrary.model.Document" />
-	<class name="edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl" table="TL_Document">
+	<import class="edu.ucla.macroscope.textlibrary.model.MacroscopeDocument" />
+	<class name="edu.ucla.macroscope.textlibrary.model.impl.MacroscopeDocumentImpl" table="TL_MacroscopeDocument">
 		<cache usage="read-write" />
 		<id name="documentId" type="long">
 			<generator class="assigned" />
@@ -14,9 +14,17 @@
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
-		<property name="content" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<one-to-one name="contentBlobModel" access="com.liferay.portal.dao.orm.hibernate.PrivatePropertyAccessor" class="edu.ucla.macroscope.textlibrary.model.MacroscopeDocumentContentBlobModel" cascade="save-update" outer-join="false" constrained="true" />
 		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="author" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="collection" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="edu.ucla.macroscope.textlibrary.model.MacroscopeDocumentContentBlobModel" table="TL_MacroscopeDocument" lazy="true">
+		<id name="documentId" column="documentId">
+			<generator class="foreign">
+				<param name="property">edu.ucla.macroscope.textlibrary.model.impl.MacroscopeDocumentImpl</param>
+			</generator>
+		</id>
+		<property column="content" name="contentBlob" type="blob" />
 	</class>
 </hibernate-mapping>

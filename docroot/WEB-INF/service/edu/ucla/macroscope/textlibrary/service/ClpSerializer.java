@@ -25,7 +25,7 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
-import edu.ucla.macroscope.textlibrary.model.DocumentClp;
+import edu.ucla.macroscope.textlibrary.model.MacroscopeDocumentClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -102,8 +102,8 @@ public class ClpSerializer {
 
 		String oldModelClassName = oldModelClass.getName();
 
-		if (oldModelClassName.equals(DocumentClp.class.getName())) {
-			return translateInputDocument(oldModel);
+		if (oldModelClassName.equals(MacroscopeDocumentClp.class.getName())) {
+			return translateInputMacroscopeDocument(oldModel);
 		}
 
 		return oldModel;
@@ -121,10 +121,10 @@ public class ClpSerializer {
 		return newList;
 	}
 
-	public static Object translateInputDocument(BaseModel<?> oldModel) {
-		DocumentClp oldClpModel = (DocumentClp)oldModel;
+	public static Object translateInputMacroscopeDocument(BaseModel<?> oldModel) {
+		MacroscopeDocumentClp oldClpModel = (MacroscopeDocumentClp)oldModel;
 
-		BaseModel<?> newModel = oldClpModel.getDocumentRemoteModel();
+		BaseModel<?> newModel = oldClpModel.getMacroscopeDocumentRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -149,8 +149,8 @@ public class ClpSerializer {
 		String oldModelClassName = oldModelClass.getName();
 
 		if (oldModelClassName.equals(
-					"edu.ucla.macroscope.textlibrary.model.impl.DocumentImpl")) {
-			return translateOutputDocument(oldModel);
+					"edu.ucla.macroscope.textlibrary.model.impl.MacroscopeDocumentImpl")) {
+			return translateOutputMacroscopeDocument(oldModel);
 		}
 		else if (oldModelClassName.endsWith("Clp")) {
 			try {
@@ -266,19 +266,20 @@ public class ClpSerializer {
 		}
 
 		if (className.equals(
-					"edu.ucla.macroscope.textlibrary.NoSuchDocumentException")) {
-			return new edu.ucla.macroscope.textlibrary.NoSuchDocumentException();
+					"edu.ucla.macroscope.textlibrary.NoSuchMacroscopeDocumentException")) {
+			return new edu.ucla.macroscope.textlibrary.NoSuchMacroscopeDocumentException();
 		}
 
 		return throwable;
 	}
 
-	public static Object translateOutputDocument(BaseModel<?> oldModel) {
-		DocumentClp newModel = new DocumentClp();
+	public static Object translateOutputMacroscopeDocument(
+		BaseModel<?> oldModel) {
+		MacroscopeDocumentClp newModel = new MacroscopeDocumentClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
-		newModel.setDocumentRemoteModel(oldModel);
+		newModel.setMacroscopeDocumentRemoteModel(oldModel);
 
 		return newModel;
 	}

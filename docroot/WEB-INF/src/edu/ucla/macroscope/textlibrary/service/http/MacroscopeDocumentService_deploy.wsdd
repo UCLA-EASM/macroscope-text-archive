@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_TL_MacroscopeDocumentService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.textlibrary.macroscope.ucla.edu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="assign" qname="operNS:assign" returnQName="assignReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="documentIds" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="title" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="author" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="collection" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="assign" />
+		<parameter name="className" value="edu.ucla.macroscope.textlibrary.service.http.MacroscopeDocumentServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="MacroscopeDocumentServiceSoap" />
+		<parameter name="wsdlServiceElement" value="MacroscopeDocumentServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_TL_MacroscopeDocumentService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.textlibrary.macroscope.ucla.edu" />
+	</service>
+</deployment>

@@ -3,7 +3,7 @@
 <service-builder package-path="edu.ucla.macroscope.textlibrary">
 	<author>dave</author>
 	<namespace>TL</namespace>
-	<entity name="Document" local-service="true">
+	<entity name="MacroscopeDocument" local-service="true" remote-service="true">
 
 		<!-- PK fields -->
 
@@ -20,7 +20,7 @@
 		<column name="userName" type="String"></column>
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
-        <column name="content" type="String"></column>
+        <column name="content" type="Blob"></column>
         <column name="title" type="String"></column>
         <column name="author" type="String"></column>
         <column name="collection" type="String"></column>
