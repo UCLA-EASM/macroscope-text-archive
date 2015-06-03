@@ -1,9 +1,9 @@
-var FileUploadController = ['$scope', '$http', 'FileUploader', function ($scope, $http, FileUploader) {
+var FileUploadController = function ($scope, $http, FileUploader, documentIds) {
 	$scope.data = {
 		title : '',
 		author: '',
 		collection: '',
-		documentIds : []
+		documentIds : documentIds
 	};
 	
 	$scope.save = function (data) {
@@ -21,6 +21,7 @@ var FileUploadController = ['$scope', '$http', 'FileUploader', function ($scope,
 			}
 		}).success(function () {
 			alert("Assigned!");
+			$scope.$close();
 		});
 	}
 	
@@ -39,4 +40,4 @@ var FileUploadController = ['$scope', '$http', 'FileUploader', function ($scope,
 		this.fileIds.push(parseInt(response));
 	};
     
-}];
+};

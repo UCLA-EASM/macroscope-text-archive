@@ -64,9 +64,15 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 		$modal.open({
 			templateUrl: 'editscreen.html',
 			controller: 'FileUploadController',
-			resolve: function () {
-				console.log("All done ...");
+			resolve: {
+				documentIds: function (ids) {
+					return function () {
+						return ids;
+					}
+				}($scope.items.filter(function (i) {return i.isChecked;}).map(function (i) {return i.documentId;}))
 			}
+		}).result.then(function () {
+			reloadSearch()
 		});
 	};
 	

@@ -41,6 +41,7 @@
 	</table>
 	<button ng-click="delete()" />Delete</button>
 	<button ng-click="showEditScreen()">Upload a file</button>
+	<button ng-click="showEditScreen()">Edit files</button>
 </div>
 
 <!-- Author list -->
