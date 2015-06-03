@@ -11,10 +11,19 @@
 			/js/angular.min.js
 		</footer-portlet-javascript>
 		<footer-portlet-javascript>
+			/js/angular.portlet.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
 			/js/main.js
 		</footer-portlet-javascript>
 		<footer-portlet-javascript>
 			/js/test.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/DocumentListController.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>
+			/js/FileUploadController.js
 		</footer-portlet-javascript>
 		<footer-portlet-javascript>
 			/js/angular-file-upload.min.js
