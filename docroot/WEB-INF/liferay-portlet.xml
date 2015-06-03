@@ -17,7 +17,7 @@
 			/js/main.js
 		</footer-portlet-javascript>
 		<footer-portlet-javascript>
-			/js/test.js
+			/js/ui-bootstrap-tpls-0.13.0.min.js
 		</footer-portlet-javascript>
 		<footer-portlet-javascript>
 			/js/DocumentListController.js
