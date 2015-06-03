@@ -20,7 +20,7 @@ var FileUploadController = function ($scope, $http, FileUploader, documentIds) {
 				documentIds: data.documentIds.join(',')
 			}
 		}).success(function () {
-			alert("Assigned!");
+			alert("Assignment complete");
 			$scope.$close();
 		});
 	}

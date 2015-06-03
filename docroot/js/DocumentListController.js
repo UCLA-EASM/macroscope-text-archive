@@ -18,9 +18,7 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 	}
 	
 	$scope.nextPage = function () {
-//		if ($scope.nextPage < $scope.totalPages) {
-			$scope.currentPage += 1;
-//		}
+		$scope.currentPage += 1;
 		reloadSearch();
 	};
 	
