@@ -108,10 +108,10 @@ public class MacroscopeDocumentServiceSoap {
 		}
 	}
 
-	public static java.lang.String deleteDocument(int documentId)
+	public static java.lang.String delete(int documentId)
 		throws RemoteException {
 		try {
-			java.lang.String returnValue = MacroscopeDocumentServiceUtil.deleteDocument(documentId);
+			java.lang.String returnValue = MacroscopeDocumentServiceUtil.delete(documentId);
 
 			return returnValue;
 		}

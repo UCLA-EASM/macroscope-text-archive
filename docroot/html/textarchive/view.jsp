@@ -15,6 +15,7 @@
 %>
 
 <div ng-controller="DocumentListController">
+	<p ng-model="message" class="alert alert-success">{{message}}</p>
 	<table>
 		<thead>
 			<tr>
@@ -48,6 +49,8 @@
 
 <portlet:actionURL name="showDataAssignmentScreen" var="documentEditURL">
 </portlet:actionURL>
+
+<a href="<%= documentEditURL %>">Edit</a>
 
 <%
 List authors = null; // TODO: implement selecting unique authors

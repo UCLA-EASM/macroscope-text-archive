@@ -83,9 +83,9 @@ public class MacroscopeDocumentServiceUtil {
 		return getService().getContent(documentId);
 	}
 
-	public static java.lang.String deleteDocument(int documentId)
+	public static java.lang.String delete(int documentId)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return getService().deleteDocument(documentId);
+		return getService().delete(documentId);
 	}
 
 	public static void clearService() {

@@ -83,6 +83,6 @@ public interface MacroscopeDocumentService extends BaseService, InvokableService
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.lang.String getContent(long documentId);
 
-	public java.lang.String deleteDocument(int documentId)
+	public java.lang.String delete(int documentId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 }

@@ -86,9 +86,9 @@ public class MacroscopeDocumentServiceWrapper
 	}
 
 	@Override
-	public java.lang.String deleteDocument(int documentId)
+	public java.lang.String delete(int documentId)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _macroscopeDocumentService.deleteDocument(documentId);
+		return _macroscopeDocumentService.delete(documentId);
 	}
 
 	/**

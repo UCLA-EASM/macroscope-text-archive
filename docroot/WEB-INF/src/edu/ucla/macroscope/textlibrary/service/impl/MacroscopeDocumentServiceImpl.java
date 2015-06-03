@@ -217,7 +217,7 @@ public class MacroscopeDocumentServiceImpl
 		}
 	}
 	
-	public String deleteDocument(int documentId) throws SystemException {
+	public String delete(int documentId) throws SystemException {
 		
 		try {
 			MacroscopeDocumentLocalServiceUtil.deleteMacroscopeDocument(documentId);

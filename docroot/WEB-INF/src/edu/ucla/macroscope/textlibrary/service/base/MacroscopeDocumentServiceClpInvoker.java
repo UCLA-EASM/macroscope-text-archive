@@ -53,7 +53,7 @@ public class MacroscopeDocumentServiceClpInvoker {
 
 		_methodParameterTypes27 = new String[] { "long" };
 
-		_methodName28 = "deleteDocument";
+		_methodName28 = "delete";
 
 		_methodParameterTypes28 = new String[] { "int" };
 	}
@@ -99,7 +99,7 @@ public class MacroscopeDocumentServiceClpInvoker {
 
 		if (_methodName28.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes28, parameterTypes)) {
-			return MacroscopeDocumentServiceUtil.deleteDocument(((Integer)arguments[0]).intValue());
+			return MacroscopeDocumentServiceUtil.delete(((Integer)arguments[0]).intValue());
 		}
 
 		throw new UnsupportedOperationException();

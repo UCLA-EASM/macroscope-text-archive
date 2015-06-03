@@ -53,7 +53,7 @@ public class MacroscopeDocumentServiceClp implements MacroscopeDocumentService {
 
 		_methodParameterTypes6 = new String[] { "long" };
 
-		_methodName7 = "deleteDocument";
+		_methodName7 = "delete";
 
 		_methodParameterTypes7 = new String[] { "int" };
 	}
@@ -228,7 +228,7 @@ public class MacroscopeDocumentServiceClp implements MacroscopeDocumentService {
 	}
 
 	@Override
-	public java.lang.String deleteDocument(int documentId)
+	public java.lang.String delete(int documentId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 

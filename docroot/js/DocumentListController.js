@@ -1,6 +1,8 @@
 var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $http, $modal) {
 	$scope.items = [];
 	
+	$scope.message = "";
+	
 	$scope.totalItems = 0;
 	$scope.itemsPerPage = 10;
 	$scope.currentPage = 0;
@@ -43,20 +45,36 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 		}
 	};
 	
+	var getSelectedDocuments = function () {
+		return $scope.items.filter(function (i) {return i.isChecked;}).map(function (i) {return i.documentId;});
+	};
+	
 	$scope.delete = function () {
-		for (var i = 0; i < $scope.items.length; i++) {
-			var item = $scope.items[i];
+		var selectedDocuments = getSelectedDocuments(),
+			deletedDocuments = []
+		;
+		
+		for (var i = 0; i < selectedDocuments.length; i++) {
+			var item = selectedDocuments[i];
 			
-			if (item.isChecked) {
-				$http.post({
-					url: '/api/jsonws/macroscope-text-archive-portlet.macroscopedocument/delete-document/',
-					data: {documentId: item.id}
-				}).success(function (data) {
-					alert("Document " + item.id + " deleted");
-				}).error(function (data) {
-					alert("Problem deleting document " + item.id);
-				});
-			} // end if
+			$http.post('/api/jsonws/macroscope-text-archive-portlet.macroscopedocument/delete/document-id/' + item)
+			.success(function (response, status, fn, request) {
+				var documentId = request.url.split('/').pop();
+				deletedDocuments.push(documentId);
+				
+				if (deletedDocuments.length == selectedDocuments.length) {
+					
+					var pluralize = 's';
+					
+					if (selectedDocuments.length == 1) {
+						pluralize = '';
+					}
+					$scope.message = selectedDocuments.length + " document" + pluralize + " deleted";
+					reloadSearch();
+				}
+			}).error(function (data) {
+				alert("Problem deleting document " + item);
+			});
 		} // end for
 	} // end remove function
 	
@@ -69,7 +87,7 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 					return function () {
 						return ids;
 					}
-				}($scope.items.filter(function (i) {return i.isChecked;}).map(function (i) {return i.documentId;}))
+				}(getSelectedDocuments())
 			}
 		}).result.then(function () {
 			reloadSearch()
