@@ -8,6 +8,8 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 	$scope.currentPage = 0;
 	$scope.totalPages = 0;
 	
+	$scope.hasNextPage = true;
+	
 	$scope.prevPage = function () {
 		if ($scope.currentPage > 0) {
 			$scope.currentPage -= 1;
@@ -16,9 +18,9 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 	}
 	
 	$scope.nextPage = function () {
-		if ($scope.nextPage < $scope.totalPages) {
+//		if ($scope.nextPage < $scope.totalPages) {
 			$scope.currentPage += 1;
-		}
+//		}
 		reloadSearch();
 	};
 	
@@ -29,7 +31,12 @@ var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $ht
 				'&start=' + ($scope.currentPage * $scope.itemsPerPage) + 
 				'&end=' + (($scope.currentPage + 1) * $scope.itemsPerPage)
 			).success(function (data) {
-			$scope.items = data;
+				$scope.items = data;
+				if (data.length < $scope.itemsPerPage) {
+					$scope.hasNextPage = false;
+				} else {
+					$scope.hasNextPage = true;
+				}
 		}).error(function (error) {
 			alert("Nothing found");
 		});

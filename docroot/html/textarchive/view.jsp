@@ -19,16 +19,16 @@
 	<table>
 		<thead>
 			<tr>
+				<th colspan="5">
+					Page {{currentPage}} of {{totalPages}} (total items: {{totalItems}}) 
+				</th>
+			</tr>
+			<tr>
 				<th ng-click="prevPage()">< Prev</th>
 				<th>Title</th>
 				<th>Author</th>
 				<th>Collection</th>
-				<th ng-click="nextPage()">Next ></th>
-			</tr>
-			<tr>
-				<th colspan="5">
-					Page {{currentPage}} of {{totalPages}} (total items: {{totalItems}}) 
-				</th>
+				<th ng-click="nextPage()" ng-if="hasNextPage">Next ></th>
 			</tr>
 		</thead>
 		<tbody>
