@@ -49,9 +49,13 @@ public class MacroscopeDocumentServiceClp implements MacroscopeDocumentService {
 				"java.lang.String", "java.lang.String", "int", "int"
 			};
 
-		_methodName6 = "deleteDocument";
+		_methodName6 = "getContent";
 
-		_methodParameterTypes6 = new String[] { "int" };
+		_methodParameterTypes6 = new String[] { "long" };
+
+		_methodName7 = "deleteDocument";
+
+		_methodParameterTypes7 = new String[] { "int" };
 	}
 
 	@Override
@@ -139,13 +143,13 @@ public class MacroscopeDocumentServiceClp implements MacroscopeDocumentService {
 	}
 
 	@Override
-	public java.lang.String uploadFile(java.io.File content) {
+	public java.lang.String uploadFile(java.io.File file) {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName4,
 					_methodParameterTypes4,
-					new Object[] { ClpSerializer.translateInput(content) });
+					new Object[] { ClpSerializer.translateInput(file) });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -201,13 +205,36 @@ public class MacroscopeDocumentServiceClp implements MacroscopeDocumentService {
 	}
 
 	@Override
-	public java.lang.String deleteDocument(int documentId)
-		throws com.liferay.portal.kernel.exception.SystemException {
+	public java.lang.String getContent(long documentId) {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableService.invokeMethod(_methodName6,
 					_methodParameterTypes6, new Object[] { documentId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.lang.String deleteDocument(int documentId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName7,
+					_methodParameterTypes7, new Object[] { documentId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -241,4 +268,6 @@ public class MacroscopeDocumentServiceClp implements MacroscopeDocumentService {
 	private String[] _methodParameterTypes5;
 	private String _methodName6;
 	private String[] _methodParameterTypes6;
+	private String _methodName7;
+	private String[] _methodParameterTypes7;
 }

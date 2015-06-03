@@ -29,7 +29,7 @@
 
 (function (Liferay, angular) {
 	angular.portlet.add('macroscope-text-archive-portlet', 'text-archive', function () {
-		var documentListApp = angular.module("tableListApp", []);
+		var documentListApp = angular.module("tableListApp", ['angularFileUpload']);
 	
 		documentListApp.controller("DocumentListController", ['$scope', '$http', function ($scope, $http) {
 			$scope.items = [];
@@ -99,7 +99,7 @@
 			$scope.files = [];
 			
 			var uploader = $scope.uploader = new FileUploader({
-				url: '/api/jsonws/macroscope-text-archive-portlet.macroscopedocument/upload-file'
+				url: '/api/jsonws/macroscope-text-archive-portlet.macroscopedocument/upload-file/'
 			});
 			
 			uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {

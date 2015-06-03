@@ -70,13 +70,17 @@ public interface MacroscopeDocumentService extends BaseService, InvokableService
 		java.lang.String collection);
 
 	@com.liferay.portal.kernel.jsonwebservice.JSONWebService(method = "POST")
-	public java.lang.String uploadFile(java.io.File content);
+	public java.lang.String uploadFile(java.io.File file);
 
 	@com.liferay.portal.kernel.jsonwebservice.JSONWebService(method = "GET")
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List getDocuments(java.lang.String authors,
 		java.lang.String collections, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@com.liferay.portal.kernel.jsonwebservice.JSONWebService(method = "GET")
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.lang.String getContent(long documentId);
 
 	public java.lang.String deleteDocument(int documentId)
 		throws com.liferay.portal.kernel.exception.SystemException;

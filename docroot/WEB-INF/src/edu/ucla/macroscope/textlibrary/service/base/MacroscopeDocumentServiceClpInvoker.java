@@ -49,9 +49,13 @@ public class MacroscopeDocumentServiceClpInvoker {
 				"java.lang.String", "java.lang.String", "int", "int"
 			};
 
-		_methodName27 = "deleteDocument";
+		_methodName27 = "getContent";
 
-		_methodParameterTypes27 = new String[] { "int" };
+		_methodParameterTypes27 = new String[] { "long" };
+
+		_methodName28 = "deleteDocument";
+
+		_methodParameterTypes28 = new String[] { "int" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -90,6 +94,11 @@ public class MacroscopeDocumentServiceClpInvoker {
 
 		if (_methodName27.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes27, parameterTypes)) {
+			return MacroscopeDocumentServiceUtil.getContent(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName28.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes28, parameterTypes)) {
 			return MacroscopeDocumentServiceUtil.deleteDocument(((Integer)arguments[0]).intValue());
 		}
 
@@ -108,4 +117,6 @@ public class MacroscopeDocumentServiceClpInvoker {
 	private String[] _methodParameterTypes26;
 	private String _methodName27;
 	private String[] _methodParameterTypes27;
+	private String _methodName28;
+	private String[] _methodParameterTypes28;
 }

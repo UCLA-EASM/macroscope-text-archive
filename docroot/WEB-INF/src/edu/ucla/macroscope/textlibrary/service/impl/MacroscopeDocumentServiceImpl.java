@@ -14,9 +14,13 @@
 
 package edu.ucla.macroscope.textlibrary.service.impl;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -68,7 +72,7 @@ public class MacroscopeDocumentServiceImpl
 	public String assign(String documentIds, String title, String author, String collection) {
 		String[] documentIdList = documentIds.split(",");
 		
-		long titleCounter = 0;
+		long titleCounter = 1;
 		
 		for (String unparsedDocumentId : documentIdList) {
 			long parsedDocumentId = Long.parseLong(unparsedDocumentId);
@@ -90,6 +94,7 @@ public class MacroscopeDocumentServiceImpl
 				if (collection != NO_CHANGE) {
 					md.setCollection(collection);
 				}
+				MacroscopeDocumentLocalServiceUtil.updateMacroscopeDocument(md);
 			} catch (SystemException sx) {
 				return "FAILURE: " + parsedDocumentId;
 			} catch (PortalException px) {
@@ -100,19 +105,16 @@ public class MacroscopeDocumentServiceImpl
 	}
 	
 	@JSONWebService(method="POST")
-	public String uploadFile(File content) {
+	public String uploadFile(File file) {
 		try {
-			System.out.println("Uploading file in JSON ...");
 			MacroscopeDocument md = MacroscopeDocumentLocalServiceUtil.createMacroscopeDocument(CounterLocalServiceUtil.increment());
-			System.out.println("Creating document ...");
-//			OutputBlob contentBlob = new OutputBlob(new StringInputStream(content), content.length());
-			OutputBlob contentBlob = new OutputBlob(new FileInputStream(content), content.length());
+			OutputBlob contentBlob = new OutputBlob(new FileInputStream(file), file.length());
+			md.setTitle(file.getName());
 			md.setContent(contentBlob);
-			System.out.println("Document created ...");
+			md.setNew(true);
+			MacroscopeDocumentLocalServiceUtil.addMacroscopeDocument(md);
 			return md.getPrimaryKey() + "";
 		} catch (SystemException ex) {
-			System.out.println("System Exception ...");
-			System.out.println(ex);
 			return ex.toString();
 		} catch (FileNotFoundException ex) {
 			System.out.println("File not found: how did this happen?");
@@ -157,10 +159,60 @@ public class MacroscopeDocumentServiceImpl
 			}
 		}
 		
+		System.out.println("Start " + start + " and end at " + end);
+		
 		if (doDynamicQuery) {
+			System.out.println("Dynamic query");
 			return MacroscopeDocumentLocalServiceUtil.dynamicQuery(query, start, end);
 		} else {
 			return MacroscopeDocumentLocalServiceUtil.getMacroscopeDocuments(start, end);
+		}
+	}
+	
+	@JSONWebService(method="GET")
+	public String getContent(long documentId) {
+		try {
+			MacroscopeDocument document = MacroscopeDocumentLocalServiceUtil.getMacroscopeDocument(documentId);
+			
+			ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+			
+			int bytesPerPass = 4096;
+			byte[] buffer = new byte[bytesPerPass];
+			
+			InputStream inStream = document.getContent().getBinaryStream();
+			
+			String contents = "";
+			
+			int bytesRead = inStream.read(buffer, 0, bytesPerPass);
+			
+			while (bytesRead != -1) {
+				outStream.write(buffer);
+				bytesRead = inStream.read(buffer, 0, bytesPerPass);
+			}
+			
+			contents += new String(
+				outStream.toByteArray(),
+				"UTF-8"
+			);
+			
+			inStream.close();
+			
+			return contents;
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return e.toString();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return e.toString();
+		} catch (IOException e) {
+			// Hard to imagine how this could occur
+			e.printStackTrace();
+			return e.toString();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return e.toString();
 		}
 	}
 	

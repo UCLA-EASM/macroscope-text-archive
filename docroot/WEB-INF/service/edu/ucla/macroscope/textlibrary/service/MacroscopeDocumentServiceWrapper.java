@@ -68,8 +68,8 @@ public class MacroscopeDocumentServiceWrapper
 	}
 
 	@Override
-	public java.lang.String uploadFile(java.io.File content) {
-		return _macroscopeDocumentService.uploadFile(content);
+	public java.lang.String uploadFile(java.io.File file) {
+		return _macroscopeDocumentService.uploadFile(file);
 	}
 
 	@Override
@@ -78,6 +78,11 @@ public class MacroscopeDocumentServiceWrapper
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _macroscopeDocumentService.getDocuments(authors, collections,
 			start, end);
+	}
+
+	@Override
+	public java.lang.String getContent(long documentId) {
+		return _macroscopeDocumentService.getContent(documentId);
 	}
 
 	@Override

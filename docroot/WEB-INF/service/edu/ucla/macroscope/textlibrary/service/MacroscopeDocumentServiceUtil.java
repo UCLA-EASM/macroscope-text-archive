@@ -69,14 +69,18 @@ public class MacroscopeDocumentServiceUtil {
 		return getService().assign(documentIds, title, author, collection);
 	}
 
-	public static java.lang.String uploadFile(java.io.File content) {
-		return getService().uploadFile(content);
+	public static java.lang.String uploadFile(java.io.File file) {
+		return getService().uploadFile(file);
 	}
 
 	public static java.util.List getDocuments(java.lang.String authors,
 		java.lang.String collections, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getDocuments(authors, collections, start, end);
+	}
+
+	public static java.lang.String getContent(long documentId) {
+		return getService().getContent(documentId);
 	}
 
 	public static java.lang.String deleteDocument(int documentId)

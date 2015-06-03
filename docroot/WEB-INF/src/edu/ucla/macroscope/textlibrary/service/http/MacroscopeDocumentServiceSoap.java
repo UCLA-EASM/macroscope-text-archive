@@ -94,6 +94,20 @@ public class MacroscopeDocumentServiceSoap {
 		}
 	}
 
+	public static java.lang.String getContent(long documentId)
+		throws RemoteException {
+		try {
+			java.lang.String returnValue = MacroscopeDocumentServiceUtil.getContent(documentId);
+
+			return returnValue;
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static java.lang.String deleteDocument(int documentId)
 		throws RemoteException {
 		try {
