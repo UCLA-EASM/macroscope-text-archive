@@ -65,6 +65,7 @@ public interface MacroscopeDocumentService extends BaseService, InvokableService
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
+	@com.liferay.portal.kernel.jsonwebservice.JSONWebService(method = "POST")
 	public java.lang.String assign(java.lang.String documentIds,
 		java.lang.String title, java.lang.String author,
 		java.lang.String collection);

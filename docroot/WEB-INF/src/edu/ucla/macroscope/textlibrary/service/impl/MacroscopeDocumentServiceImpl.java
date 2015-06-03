@@ -69,6 +69,7 @@ public class MacroscopeDocumentServiceImpl
 	
 	final String NO_CHANGE = "NO_CHANGE";
 	
+	@JSONWebService(method="POST")
 	public String assign(String documentIds, String title, String author, String collection) {
 		String[] documentIdList = documentIds.split(",");
 		

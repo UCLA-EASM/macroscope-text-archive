@@ -5,7 +5,7 @@
 
 (function (Liferay, angular) {
 	angular.portlet.add('macroscope-text-archive-portlet', 'text-archive', function () {
-		var documentListApp = angular.module("tableListApp", ['angularFileUpload']);
+		var documentListApp = angular.module("tableListApp", ['ui.bootstrap', 'angularFileUpload']);
 	
 		documentListApp.controller("DocumentListController", DocumentListController);
 		

@@ -1,4 +1,4 @@
-var DocumentListController = ['$scope', '$http', function ($scope, $http) {
+var DocumentListController = ['$scope', '$http', '$modal', function ($scope, $http, $modal) {
 	$scope.items = [];
 	
 	$scope.totalItems = 0;
@@ -59,6 +59,16 @@ var DocumentListController = ['$scope', '$http', function ($scope, $http) {
 			} // end if
 		} // end for
 	} // end remove function
+	
+	$scope.showEditScreen = function () {
+		$modal.open({
+			templateUrl: 'editscreen.html',
+			controller: 'FileUploadController',
+			resolve: function () {
+				console.log("All done ...");
+			}
+		});
+	};
 	
 }
 ];
