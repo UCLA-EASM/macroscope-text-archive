@@ -7,13 +7,6 @@
 
 <portlet:defineObjects />
 
-<% 
-
-// If no query parameters have been set ...
-//List documents = DocumentLocalServiceUtil.getDocuments(0, 20);
-
-%>
-
 <div ng-controller="DocumentListController">
 	<p ng-model="message" class="alert alert-success">{{message}}</p>
 	<table>
@@ -124,29 +117,3 @@ List authors = null; // TODO: implement selecting unique authors
 	<input type="file" name="file" nv-file-select="" uploader="uploader" />
 </script>
 
-<%--
-<table id="author-list">
-	<thead>
-		<th>Name</th>
-	</thead>
-	<tbody>
-		<c:forEach items="${authors}" var="author">
-			<tr>
-				<portlet:renderURL var="selectThisAuthorURL">
-					<portlet:param name="authors" value="author.name" />
-					<!--  TODO: add already-selected authors -->
-					<!--  TODO: add collection -->
-				</portlet:renderURL>
-				<a href="<%= selectThisAuthorURL %>"><%= author.name %></a>
-			</tr>
-		</c:forEach>
-	</tbody>
-</table>
---%>
-
-<portlet:renderURL var="clearAuthorsURL">
-	<portlet:param name="authors" value="" />
-	<!--  TODO: Add collection -->
-</portlet:renderURL>
-
-<a href="<%= clearAuthorsURL %>">Clear All Authors</a>

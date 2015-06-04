@@ -7,9 +7,8 @@ var FileUploadController = function ($scope, $http, FileUploader, documentIds) {
 	};
 	
 	$scope.save = function (data) {
-		// NOTE: Strictly speaking, this is the wrong thing to do--appending them to the URL parameters
-		// However, Angular defaults to sending POST requests as a JSON body, and that doesn't work with
-		// Liferay. 
+		// NOTE: Appending parameters to the URL is the wrong thing to do. However, Angular defaults to 
+		// sending POST requests as a JSON body, and that doesn't work with Liferay. 
 		$http({
 			url: '/api/jsonws/macroscope-text-archive-portlet.macroscopedocument/assign',
 			method: 'POST',
@@ -20,7 +19,7 @@ var FileUploadController = function ($scope, $http, FileUploader, documentIds) {
 				documentIds: data.documentIds.join(',')
 			}
 		}).success(function () {
-			alert("Assignment complete");
+			alert("Documents updated");
 			$scope.$close();
 		});
 	}
