@@ -164,6 +164,7 @@ public class MacroscopeDocumentServiceImpl
 		
 		if (doDynamicQuery) {
 			System.out.println("Dynamic query");
+			long count = MacroscopeDocumentLocalServiceUtil.dynamicQueryCount(query);
 			return MacroscopeDocumentLocalServiceUtil.dynamicQuery(query, start, end);
 		} else {
 			return MacroscopeDocumentLocalServiceUtil.getMacroscopeDocuments(start, end);

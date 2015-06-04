@@ -18,17 +18,27 @@
 	<p ng-model="message" class="alert alert-success">{{message}}</p>
 	<table>
 		<thead>
+		<!-- 
 			<tr>
 				<th colspan="5">
 					Page {{currentPage}} of {{totalPages}} (total items: {{totalItems}}) 
 				</th>
-			</tr>
-			<tr>
-				<th ng-click="prevPage()">< Prev</th>
+			</tr> 
+		-->
+			<tr class="table-heading">
+				<th ng-click="prevPage()" class="control">
+					<span class="control">
+						<span class="glyphicon glyphicon-chevron-left" ng-if="currentPage > 0" ></span>
+					</span>
+				</th>
 				<th>Title</th>
 				<th>Author</th>
 				<th>Collection</th>
-				<th ng-click="nextPage()" ng-if="hasNextPage">Next ></th>
+				<th ng-click="nextPage()" class="control">
+					<span class="control">
+						<span class="glyphicon glyphicon-chevron-right" ng-if="hasNextPage" ></span>
+					</span>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
